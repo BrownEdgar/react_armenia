@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Blog title N 1",
+    "image": "./images/photo-1.jpg",
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis quae, numquam quaerat architecto cum quo tempora dolorem nemo voluptas possimus voluptatem! Iure magni rerum dolores quisquam, vel id quidem debitis.",
+    "price": 21,
+    "inStock": false,
+    "hoursAgo": 15
+  },
+  {
+    "id": 2,
+    "title": "Alog title N 2",
+    "image": "./images/photo-2.jpg",
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis quae, numquam quaerat architecto cum quo tempora dolorem nemo voluptas possimus voluptatem! Iure magni rerum dolores quisquam, vel id quidem debitis.",
+    "price": 8,
+    "inStock": false,
+    "hoursAgo": 8
+  },
+  {
+    "id": 3,
+    "title": "Blog title N 3",
+    "image": "./images/photo-3.jpg",
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis quae, numquam quaerat architecto cum quo tempora dolorem nemo voluptas possimus voluptatem! Iure magni rerum dolores quisquam, vel id quidem debitis.",
+    "price": 14,
+    "inStock": true,
+    "hoursAgo": 0
+  },
+  {
+    "id": 4,
+    "title": "Blog title N 4",
+    "image": "./images/photo-4.jpg",
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis quae, numquam quaerat architecto cum quo tempora dolorem nemo voluptas possimus voluptatem! Iure magni rerum dolores quisquam, vel id quidem debitis.",
+    "price": 19.5,
+    "inStock": false,
+    "hoursAgo": 67
+  }
+]

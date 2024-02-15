@@ -1,10 +1,10 @@
 import React from 'react'
+import ChangeBackground from './components/ChangeBackground/ChangeBackground.jsx'
 
 export default function App() {
   return (
     <div>
-      <h1>Ani branch </h1>
-      {/* code here... */}
+      <ChangeBackground/>
     </div>
   )
 }

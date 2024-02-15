@@ -1,0 +1,64 @@
+.changeBackground {
+    width: 700px;
+    margin: auto;
+}
+
+.changeBackground h1 {
+    font-size: 25px;
+    text-align: center;
+    margin: 25px;
+    color: gray;
+}
+
+.changeBackground h1 span {
+    font-size: 23px;
+    text-align: center;
+    background-color: green;
+    margin-left: 3px;
+    color: #fff;
+}
+
+.changeBackground__item {
+    padding: 20px;
+    color: #fff;
+    border: 3px solid black;
+    border-radius: 15px;
+}
+
+.changeBackground__item span {
+    font-size: 20px;
+    padding: 5px;
+    background-color: green;
+    color: #fff;
+    text-align: center;
+}
+
+.changeBackground__item p {
+    color: rgb(210, 181, 181);
+    padding: 15px 0;
+    font-size: 20px;
+}
+
+.changeBackground__item button {
+    font-size: 15px;
+    padding: 7px 15px;
+    border-radius: 15px;
+    margin-right: 5px;
+    color: #fff;
+}
+
+.changeBackground__item .Black {
+    background-color: black;
+}
+
+.changeBackground__item .Blue {
+    background-color: blue;
+}
+
+.changeBackground__item .Yellow {
+    background-color: goldenrod;
+}
+
+.changeBackground__item .changeBackground__active {
+    background-color: gray;
+}

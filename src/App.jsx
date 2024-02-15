@@ -1,10 +1,10 @@
 import React from 'react'
+import Cards from './Components/Cards/Cards'
 
 export default function App() {
   return (
     <div>
-      <h1>Ani branch </h1>
-      {/* code here... */}
+      < Cards />
     </div>
   )
 }

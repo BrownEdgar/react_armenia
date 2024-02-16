@@ -1,0 +1,49 @@
+$white-card-bg: #f2f2f2;
+$black-card-bg: #1d1d1d;
+
+@mixin flexRools($gap) {
+  display: flex;
+  gap: $gap;
+}
+
+.App {
+  width: 80%;
+  margin: 20px auto;
+  padding: 1em;
+  background-color: teal;
+  @include flexRools(20px);
+  &__item {
+    padding: 1em;
+    border-radius: 8px;
+    border: 1px solid grey;
+
+    flex-grow: 1;
+    &-black {
+      background-color: $black-card-bg;
+      color: $white-card-bg;
+    }
+    &-white {
+      background-color: $white-card-bg;
+      color: $black-card-bg;
+    }
+    img {
+      float: left;
+      height: 300px;
+      object-fit: contain;
+    }
+    h2 {
+      margin-bottom: 10px;
+    }
+    &:has(.App__image) {
+      p {
+        display: inline-block;
+        text-align: justify;
+        padding-left: 10px;
+      }
+    }
+  }
+  &__desc {
+    line-height: 1.5;
+    font-size: 18px;
+  }
+}

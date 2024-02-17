@@ -55,7 +55,7 @@ function App() {
   const [post, setPost] = useState("Black");
 
   const btnClick = (postElm) => {
-    // console.log(postElm);
+
     setPost(postElm);
   };
 

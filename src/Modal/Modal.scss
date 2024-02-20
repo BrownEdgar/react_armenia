@@ -1,0 +1,41 @@
+.Modal{
+    position: fixed;
+    inset: 0,0,0,0;
+    width: 100%;
+    height: 100vh;
+    // background-color: rgba(0, 0, 0, 0.24);
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 999999999999999;
+    &__items{
+        padding:30px ;
+        background-color: rgba(29, 29, 30, 0.945);
+        border-radius: 12px;
+        width: 500px;
+        height: 300px;
+    } 
+    &__buttons{
+        display: flex;
+        padding: 20px;
+        justify-content: space-between;
+    }
+    &__confirm{
+        padding: 10px 35px ;
+        background-color: green;
+        font-size: 23px;
+        border-radius: 12px;
+        cursor: pointer;
+        
+    }
+     &__deny{
+        padding: 10px 35px;
+        margin-left: 20px;
+        border-radius: 12px;
+        font-size: 23px;
+        background-color: red;
+        cursor: pointer;
+    }
+}

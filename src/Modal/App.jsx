@@ -1,51 +1,53 @@
 
-import React, {  useState } from 'react'
+import React, { useState } from 'react'
 import Modal from './Modal'
 import './App.scss'
 
 export default function App() {
-    const [isOpen, setIsOpen] = useState(false);
-    const [posts, setPosts] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
+  const [posts, setPosts] = useState([]);
 
-    const openModal = () => setIsOpen(!isOpen);
+  const openModal = () => setIsOpen(!isOpen);
 
-    
-    
-    // debugger
-    const openPost = () => {
-            fetch('https://jsonplaceholder.typicode.com/posts')
-                .then(res => res.json())
-                .then(data => {
-                    // console.log(data);
-                    setPosts(data);
-                    openModal();
-                })
-        }
-        
+  console.log(posts)
 
-    return (
+  // debugger
+  const getPost = () => {
+    fetch('https://jsonplaceholder.typicode.com/posts')
+      .then(res => res.json())
+      .then(data => {
+        // console.log(data);
+        setPosts(data);
+        openModal();
+      })
+  }
+
+
+  return (
     <div className='App'>
-        <button   className='App__btns'  onClick={openPost} >Open Posts?</button>
-    {
-            isOpen? (
-                <Modal openModal={openModal} >
-                    <h1>Are you sure?</h1>
-                <div>
-
-                {
-                    posts.map(posts=>{
-                     <div key={posts.id}>
-                         <h2>{posts.title}</h2>
-                         <p>{posts.body}</p>
-                     </div>
-                     
-                 })}
-                </div>
-                </Modal>
-            ) :null
-        }
-
-        
+      <button className='App__btns' onClick={openModal} >Open Posts?</button>
+      {
+        isOpen ? (
+          <Modal>
+            <h1>Are you sure?</h1>
+            <div className='Modal__buttons'>
+              <button className='Modal__deny' onClick={openModal}>Cancel</button>
+              <button className='Modal__confirm' onClick={getPost}>Continue</button>
+            </div>
+          </Modal>
+        ) : null
+      }
+      <div>
+        {
+          posts.map(post => {
+            return (
+              <div key={post.id}>
+                <h2>{post.title}</h2>
+                <p>{post.body}</p>
+              </div>
+            )
+          })}
+      </div>
     </div>
   );
 }

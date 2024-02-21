@@ -1,11 +1,10 @@
 import React from 'react'
-import Cards from './Components/Cards/Cards'
-import Posts from './Components/Posts/Posts'
+import Test from './Components/Test/Test'
 
 export default function App() {
     return (
       <div>
-          <Posts/>
+          <Test />
       </div>
     )
 }

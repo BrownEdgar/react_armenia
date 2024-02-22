@@ -1,0 +1,98 @@
+$colorlbk: #333;
+$fonsiz: 18px;
+@mixin btn {
+  padding: 5px 7px;
+  font-size: $fonsiz;
+  background-color: rgb(132, 137, 139);
+  border-radius: 9px;
+  cursor: pointer;
+  border: 2px solid rgb(0, 0, 255);
+  margin-right: 15px;
+}
+body {
+  background-color: rgba(134, 136, 136, 0.526);
+}
+.Post {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-direction: column;
+  background-color: rgba(134, 136, 136, 0.662);
+  padding: 10px 0;
+  .Post__section {
+    padding: 10px 0;
+    padding: 5px 20px;
+    height: 140px;
+    max-width: 600px;
+    border: 2px solid inherit;
+    box-shadow: 20px 20px 3px rgba(96, 134, 146, 0.579);
+    position: relative;
+
+    .Post__title {
+      font-family: cursive;
+      text-align: center;
+      font-size: $fonsiz;
+      color: $colorlbk;
+      text-transform: capitalize;
+      border-bottom: 2px solid rgba(55, 55, 237, 0.718);
+    }
+    .Post__item {
+      color: #222;
+      font-family: "Times New Roman", Times, serif;
+    }
+    .Post__item::first-letter {
+      font-size: $fonsiz;
+      text-transform: uppercase;
+      color: black;
+      font-weight: bold;
+      font-family: cursive;
+      margin-left: 5px;
+    }
+  }
+  .Post__section-second {
+    margin: 10px 0;
+    padding: 5px 20px;
+    height: 140px;
+    max-width: 600px;
+    border: 2px solid inherit;
+    box-shadow: 20px 20px 3px rgba(96, 134, 146, 0.579);
+    position: relative;
+    .Post__title {
+      font-family: cursive;
+      text-align: center;
+      font-size: $fonsiz;
+      color: $colorlbk;
+      text-transform: capitalize;
+      border-bottom: 2px solid rgba(55, 55, 237, 0.718);
+    }
+    .Post__item {
+      color: #222;
+      font-family: "Times New Roman", Times, serif;
+    }
+    .Post__item::first-letter {
+      font-size: $fonsiz;
+      text-transform: uppercase;
+      color: black;
+      font-weight: bold;
+      font-family: cursive;
+      margin-left: 5px;
+    }
+  }
+  .Post__id {
+    font-family: cursive;
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    span{
+        padding: 3px 10px;
+        text-align: center;
+        background-color: rgba(255, 0, 0, 0.121);
+        border-radius: 24px;
+        color: rgb(255, 0, 17)
+    }
+  }
+  button {
+    @include btn;
+  }
+}

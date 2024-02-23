@@ -1,10 +1,10 @@
 import React from 'react'
-import Test from './Components/Test/Test'
+import List from './Components/List/List'
 
 export default function App() {
     return (
       <div>
-          <Test />
+          <List target = {"todos"} quantity={8} />
       </div>
     )
 }

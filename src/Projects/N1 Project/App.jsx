@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import ComponentHouse from './ComponentHouse/ComponentHouse'
+import Country from './ComponentCountry/country'
+import Creater from './ComponentFounder/Creater'
 import './App.scss'
 
 
@@ -15,6 +17,12 @@ export default function App() {
                 </p>
             </div>
             <ComponentHouse />
+            <div className='App__main'>
+                <h2>Which country do you want to live?</h2>
+                <h4>Top three cities</h4>
+                <Country/>
+            </div>
+            <Creater/>
         </div>
 
     )

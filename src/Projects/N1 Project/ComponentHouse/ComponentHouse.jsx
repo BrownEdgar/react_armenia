@@ -12,13 +12,13 @@ export default function ComponentHouse() {
         {
             id: 2,
             image: 'https://media.istockphoto.com/id/1158234306/photo/craftsman-new-construction-house.jpg?s=1024x1024&w=is&k=20&c=g-Tez6dEAOK7LFzWsQb4vDMUe3tz6GMcgT7jEZjOP9o=',
-            title: 'Private Villa',
+            title: 'Beautiful Villa',
             desc: 'Lorem ipsum dolor sit amet.Animi debitis qui quos soluta ex repellat'
         },
         {
             id: 3,
             image: 'https://media.istockphoto.com/id/488415134/photo/suburban-house.jpg?s=1024x1024&w=is&k=20&c=XBhQKXQaJ0WWqHNO7nJNs_zmzy9Gk0YKY-gGzDR9JW0=',
-            title: 'Private Villa',
+            title: 'Camfotable Villa',
             desc: 'Lorem ipsum dolor sit amet.Animi debitis qui quos soluta ex repellat'
         }
     ])
@@ -32,7 +32,7 @@ export default function ComponentHouse() {
                         <div className='App__content'>
                             <h2>{elm.title}</h2>
                             <p>{elm.desc}</p>
-                            <ComponentBtn/>
+                            <ComponentBtn />
                         </div>
                     </div>
                 )

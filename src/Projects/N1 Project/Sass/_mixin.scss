@@ -13,3 +13,10 @@
   font-family: cursive;
   border: 2px solid rgb(236, 38, 236);
 }
+
+@mixin footerSection($flx,$cent,$centr,){
+  display: $flx;
+  justify-content:$cent ;
+  align-items:$cent ;
+
+}

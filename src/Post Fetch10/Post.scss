@@ -94,5 +94,6 @@ body {
   }
   button {
     @include btn;
+    margin-top: 20px;
   }
 }

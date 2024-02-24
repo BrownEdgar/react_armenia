@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import ComponentBtn from './ComponentBtn'
+import ComponentBtn from '../ComponentBtn/ComponentBtn'
 
 export default function ComponentHouse() {
     const [house, sethouse] = useState([

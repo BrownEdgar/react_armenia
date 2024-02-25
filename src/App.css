@@ -1,62 +1,10 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+.App{
+    font-family: "Dancing Script", cursive;
+    margin-block: 20px;
+    background-color: rgba(0, 0, 0, 0.277);
+    width: 99vh;
+    user-select: none;
 }
-
-span {
-    background-color: rgb(84, 189, 84);
-    color: #fff;
-}
-
-h1{
+.App__heading{
     text-align: center;
-    margin: 25px;
-}
-.App__container{
-    margin: 100px auto;
-}
-
-.App__item {
-    width: 70%;
-    padding: 20px;
-    background-color: blue;
-    margin: 0 auto;
-    box-shadow: 10px 5px 5px grey;
-    border-radius: 5px;
-    color: #fff;
-    line-height: 1.5;
-    
-}
-button{
-    text-transform: capitalize;
-    width: 100px;
-    height: 30px;
-    border-radius: 15px;
-    margin: 10px;
-
-}
-
-.App__black{
-color: #fff;
-background-color: rgb(41, 40, 40);
-}
-.App__blue{
-color: #fff;
-background-color: rgb(54, 54, 97);
-}
-.App__yellow{
-    background-color: rgb(255, 200, 0);
-}
-
-.black{
-background-color: black;
-}
-.blue{
-background-color: blue;
-}
-.yellow{
-background-color: yellow;
-color: black;
 }

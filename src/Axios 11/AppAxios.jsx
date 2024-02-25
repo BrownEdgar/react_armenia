@@ -3,6 +3,7 @@ import './AppAxios.scss'
 import { useState,useEffect } from 'react'
 import Comment from './Comments/Comment'
 import Post from './Posts/Post'
+import User from './Users/User'
 
 export default function AppAxios() {
 
@@ -10,6 +11,7 @@ export default function AppAxios() {
     <div className='AppAxios'>
       <Comment/>
       <Post/>
+      <User/>
     </div>
   )
 }

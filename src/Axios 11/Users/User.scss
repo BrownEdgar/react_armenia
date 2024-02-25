@@ -1,0 +1,27 @@
+.User {
+  box-shadow: 3px 3px 3px 2px rgb(24, 53, 67);
+  h2 {
+    text-align: center;
+    border-bottom: 2px solid red;
+    font-size: 30px;
+    font-weight: 500;
+  }
+  .User__section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    .User__area {
+        border: 2px solid rgb(112, 100, 100);
+        margin: 10px;
+        padding: 0px 10px;
+        width: 250px;
+        flex-grow: 1;
+            p {
+            }
+            span {
+                color:  rgb(244, 33, 33);;
+            }
+    }
+  }
+}

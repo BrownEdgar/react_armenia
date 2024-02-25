@@ -1,0 +1,31 @@
+body {
+  margin: 0px 50px;
+  background-color: rgb(219, 219, 219);
+}
+.Comment {
+  box-shadow: 3px 3px 3px 2px rgb(64, 76, 84);
+    h2 {
+        text-align: center;
+        border-bottom: 2px solid red;
+        font-size: 30px;
+        font-weight: 500;
+    }
+    .Comment__section {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 30px;
+            .Comment__area {
+                width: 420px;
+                border: 2px solid gray;
+                padding-left: 20px;
+                margin: 0px 15px;
+                margin-bottom: 20px;
+                    span {
+                        font-size: 18px;
+                        color: rgb(244, 33, 33);
+                        font-weight: 400;
+                        }
+        }
+    }
+}

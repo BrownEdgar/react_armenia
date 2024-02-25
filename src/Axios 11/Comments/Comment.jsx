@@ -26,7 +26,7 @@ export default function Comment() {
                             <p><span>Name: </span>{elm.name}</p>
                         </div>
                     )
-                }
+                 }
                 )}
             </div>
         </div >

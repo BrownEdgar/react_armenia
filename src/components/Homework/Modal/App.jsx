@@ -6,6 +6,7 @@ function App() {
     const [isOpen, setIsOpen] = useState(false)
     const [post, setPost] = useState([])
     const [count, setCount] = useState(1)
+    const [seePosts, setSeePosts] = useState(false)
     const toggleIsOpen = () => setIsOpen(!isOpen)
 
     const deletePost = (id) => {
@@ -13,18 +14,21 @@ function App() {
             return prev.filter(elem => elem.id !== id)
         })
     }
-
     const next = () => setCount(count + 1)
     const prev = () => setCount(count - 1)
 
     const getPost = () => {
+        
         fetch(`https://jsonplaceholder.typicode.com/comments/?_page=${count}&_limit=2`)
         .then(res => res.json())
         .then(data => setPost(data))
+        setSeePosts(true)
     }
 
     useEffect(()=>{
-        getPost()
+        if (seePosts) {
+            getPost()
+        }
     }, [count])
 
   return (
@@ -46,13 +50,13 @@ function App() {
             </Modal>
 
         <div className="App__posts">
-        <div className="App__posts-btn">
-            {
+            <div className="App__posts-btn">
+               {
                 post.length > 0
                 ? <button onClick={prev}>Previus</button>
                 : null
-            }
-        </div>
+               }
+           </div>
         <div className='App__posts-content'>
             {
                 post.map((elem) =>{

@@ -6,7 +6,7 @@ export default function List({quantity, target}) {
         setTodo] = useState([])
     useEffect(() => {
         axios({
-            baseURL: import.meta.env.VITE__DB__URL,
+            baseURL:"https://jsonplaceholder.typicode.com/" ,
             url: target,
             params: {
                 _limit: quantity

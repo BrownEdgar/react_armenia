@@ -1,10 +1,28 @@
-.App{
-    font-family: "Dancing Script", cursive;
-    margin-block: 20px;
-    background-color: rgba(0, 0, 0, 0.277);
-    width: 99vh;
+.App {
+    font-family: "Teko", sans-serif;
+    margin-block: 40px;
     user-select: none;
-}
-.App__heading{
     text-align: center;
+    color: rgb(135, 94, 41);
+}
+
+.datas {
+    background-color: rgb(135, 94, 41);
+    color: beige;
+    padding: 15px;
+    border-radius: 15px;
+    width: fit-content;
+    margin: 20px auto;
+    line-height: 2;
+}
+
+button {
+    border-radius: 15px;
+    margin: 15px 30px;
+    width: 300px;
+    height: 30px;
+    background-color: beige;
+    border: 3px solid rgb(135, 94, 41);
+    outline: 3px solid rgb(135, 94, 41);
+    outline-offset: 2px;
 }

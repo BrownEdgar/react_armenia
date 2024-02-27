@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './Posts/App'
+import App from './Reducer/App'
 
 import './index.css'
 

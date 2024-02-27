@@ -18,7 +18,6 @@ export default function App() {
 
   const setAction = (actionType) => {
     dispatch({ type: actionType });
-    dispatch({ type: 'increment_action' });
   };
   return (
     <div>

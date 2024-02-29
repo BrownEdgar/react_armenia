@@ -21,6 +21,7 @@ export default function App() {
 		}else{
 			alert('You should use unique email !!!')
 		}
+		form.reset()
 	}
 	const showPassword = (id) => {
 		setCurrentUserId(id)

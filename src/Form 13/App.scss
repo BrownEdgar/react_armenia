@@ -1,0 +1,68 @@
+li {
+  list-style: none;
+}
+
+.App {
+  font-family: Arial, Helvetica, sans-serif;
+  .App__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(184, 175, 175);
+    height: 280px;
+    width: 300px;
+    margin: 0 auto;
+    border-radius: 9px;
+    box-shadow: -2px 1px 4px 2px rgb(131, 125, 125);
+    p {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 7px;
+      letter-spacing: 2px;
+      font-size: 18px;
+    }
+    .App_submit {
+      margin-top: 10px;
+      border-radius: 9px;
+      background-image: linear-gradient(green, rgb(94, 246, 38));
+      color: white;
+      padding: 5px 7px;
+      border: none;
+      cursor: pointer;
+    }
+  }
+  ul {
+    border-top: 2px solid rgb(110, 110, 243);
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+  }
+}
+.ul-section {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 2px solid rgb(153, 143, 143);
+  border-radius: 9px;
+  background-color: rgba(55, 212, 212, 0.308);
+  padding: 10px;
+  gap: 10px;
+  li {
+    margin-top: 10px;
+    span {
+      color: red;
+    }
+  }
+  .lili {
+    display: flex;
+    gap: 10px;
+    // text-align: center;
+    // align-items: center;
+    h4 {
+      color: black;
+      position: relative;
+      bottom: 20px;
+    }
+  }
+}

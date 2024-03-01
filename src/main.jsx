@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './Lessons/FORM/App'
+import App from './Lessons/FORM/example2/App'
 
 import './index.css'
 

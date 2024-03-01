@@ -1,68 +1,61 @@
 import React, { useState } from 'react'
-import { nanoid } from 'nanoid'
 import './App.scss'
+import { nanoid } from 'nanoid';
+const languages = ['htmlcss', 'javascript', 'react', 'node', 'typescript', 'java']
+
 
 export default function App() {
-  const [users, setUsers] = useState([]);
-  const [currentUserId, setCurrentUserId] = useState(null)
+  const [users, setusers] = useState([]);
+  const [ischecked, setIsChecked] = useState(false)
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { username, password } = e.target
+    const { nickname: { value } } = e.target.elements;
+    const languages = e.target.languages.value;
+    const { about: { value: about } } = e.target
     const user = {
       id: nanoid(),
-      username: username.value,
-      password: password.value
+      nickname: value,
+      languages,
+      about
     }
-    setUsers([...users, user])
-  }
+    setusers([...users, user])
 
-  const sortUsers = () => {
-    setUsers((prevUsers) => {
-      return prevUsers.toSorted((a, b) => a > b ? 1 : -1)
-    })
   }
-
-  const showPassword = (id) => {
-    setCurrentUserId(id)
+  const handleChange = (e) => {
+    const { checked } = e.target;
+    setIsChecked(checked)
   }
-
   return (
     <div className='App'>
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name='username'
-          placeholder='enter your username'
-          required
-        />
-        <input type="password" name='password' required />
-        <input type="submit" value='register' />
+        <input type="text" name='nickname' placeholder='nickname' required />
+        <div className="languages">
+
+          {languages.map(elem => {
+            return (
+              <label htmlFor={elem} key={elem}>
+                <input type="radio" value={elem} name='languages' id={elem} />
+                <span>{elem}</span>
+              </label>
+            )
+          })}
+        </div>
+
+        <textarea name="about" id="about" cols="50" rows="10" maxLength={100} minLength={15}>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure exercitationem laboriosam nisi.
+        </textarea>
+        <p>
+          <input
+            type="checkbox"
+            name='privacy policy'
+            id='policy'
+            checked={ischecked}
+            onChange={handleChange} />
+          <label htmlFor="policy">I agree</label>
+        </p>
+        <input type="submit" value='join' disabled={!ischecked} />
       </form>
-      <hr />
-      <div className="buttons">
-        <button onClick={sortUsers}>sort users</button>
-      </div>
-      <ul>
-        {
-          users.map(elem => {
-            return <li key={elem.id}>
-              <span>{elem.username}</span>
-              <p className='password'>
-                <span>pass:</span>
-                <span className='grow'>
-                  {currentUserId === elem.id ? elem.password : elem.password.at(0).padEnd(9, "*")}
-                </span>
-                {
-                  (currentUserId === elem.id)
-                    ? <i className="bi  bi-eye-slash" onClick={() => showPassword(null)}></i>
-                    : <i className="bi bi-eye" onClick={() => showPassword(elem.id)}></i>
-                }
-              </p>
-            </li>
-          })
-        }
-      </ul>
     </div>
   )
 }

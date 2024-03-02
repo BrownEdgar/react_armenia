@@ -1,70 +1,28 @@
 import React, { useState } from 'react'
 import './App.scss'
-import { nanoid } from "nanoid"
 export default function App() {
-	const [currentUserId, setCurrentUserId] = useState(null);
-	const [emailArray, setEmailArray] = useState([]);
-	const [users, setUsers] = useState([]);
-	function handleSubmit(e) {
+	const [psw1, setPsw1] = useState(null);
+	const [psw2, setPsw2] = useState(null);
+	function handleChange(e) {
 		e.preventDefault();
-		const form = e.target
-		const { email, username, password } = form
-		const user = {
-			id: nanoid(),
-			email: email.value,
-			username: username.value,
-			password: password.value
-		}
-		if (!emailArray.includes(email.value)) {
-			setEmailArray([...emailArray, email.value])
-			setUsers([...users, user])
-		}else{
-			alert('You should use unique email !!!')
-		}
-		form.reset()
-	}
-	const showPassword = (id) => {
-		setCurrentUserId(id)
+		const form = e.target.parentElement
+		const { password1, password2 } = form
+			setPsw1(password1.value)
+			setPsw2(password2.value)
 	}
 	return (
 		<div className='App'>
 			<div className="form">
-			<form onSubmit={handleSubmit}>
-				<label htmlFor="email">Email</label>
-				<input required type="email" name="email" id="email" />
-				<label htmlFor="username">Username</label>
-				<input required type="text" name="" id="username" />
-				<label htmlFor="password">Password</label>
-				<input required type="password" name="" id="password" />
-
-				<input type="submit" value="save" />
-			</form>
-			</div>
-			<hr />
-			<ul>
+				<form onChange={handleChange}>
+					<label htmlFor="password1">Password 1</label>
+					<input className={psw1 === psw2 && psw1 && psw2 ? 'green' : 'red'} required type="password" name="password1" id="password1" />
+					<label htmlFor="password2">Password 2</label>
+					<input className={psw1 === psw2 && psw1 && psw2 ? 'green' : 'red'} required type="password" name="password2" id="password2" />
 				{
-					users.map((elm)=>{
-						return <li className='users' key={elm.id}>
-							<p><span className='email'>email: </span>{elm.email}</p>
-							<p><span className='username'>username: </span>{elm.username}</p>
-							<p className='p-password'>
-								<span>
-									<span className='password'>pass: </span>
-								<span>
-									{currentUserId === elm.id ? elm.password : "*".repeat(8)}
-								</span>
-								</span>
-								{
-								(currentUserId === elm.id) 
-								? <i className="bi bi-eye" onClick={() => { showPassword(null) }}></i>
-								: <i className="bi bi-eye-slash" onClick={() => { showPassword(elm.id) }}></i>
-								}
-							</p>
-						</li>
-					})
+					!psw1 && !psw2 ? <span>Lրացրեք բաց թողնված դաշտերը</span> : ''
 				}
-			</ul>
+				</form>
+			</div>
 		</div>
-		
 	)
 }

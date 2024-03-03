@@ -1,0 +1,70 @@
+body{
+  background-image: url(https://i.pinimg.com/564x/6b/e1/0d/6be10d957cd74f1d3dd9a7df9738f1f7.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    
+
+}
+
+.App{
+    height: 90vh;
+    width: 100%;
+  
+    background-position: top;
+    background-repeat: no-repeat;
+    border-radius: 16px;
+    position: relative;
+    
+h1{
+    color: white;
+    text-align: center;
+     font-family: "Madimi One", sans-serif;
+}
+
+
+
+    form{
+        background: radial-gradient(#e492169f ,#1c296f8b);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 500px;
+        height: 500px;
+        border-radius: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: rgba(233, 233, 233, 0.581) 0px 5px 15px;
+        
+    }
+    form >input{
+        width: 50%;
+        height: 50px;
+        background-color:#1c296f8b;
+        font-size: 25px;
+        color: white;
+        font-family: "Nanum Myeongjo", serif;
+        border-radius: 15px;
+    }
+
+    form>label{
+        font-size: 20px;
+          font-family: "Madimi One", sans-serif;
+          color: #fff;
+
+    }
+    .register{
+        font-size: 30px;
+        background-color: #02051cbe;
+        border: none;
+        cursor: pointer;
+        border-radius: 15px;
+        font-family: "Nanum Myeongjo", serif;
+        text-transform: uppercase
+    }
+}
+

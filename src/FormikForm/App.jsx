@@ -3,13 +3,16 @@ import { nanoid } from 'nanoid';
 import { useState } from 'react';
 import { object, string, array, number } from 'yup';
 import React from 'react'
+import Modal from './Modal/Modal';
 import './App.scss'
 
 
 
 const initialValues = {
    username: '',
-   password: ''
+   password: '',
+   modalPassword:'',
+   modalUsername:''
 }
 
 const validationSchema = object({
@@ -20,13 +23,23 @@ const validationSchema = object({
    password: string()  //Number?
       .min(5, 'Minimum must be 5 numbers')
       .matches(/^[0-9]+$/, 'Password must contain only numbers')
-      .required('You must write password')
+      .required('You must write password'),
+   modalUsername: string()
+      .min(3, 'Minimum must be 3 letter'),
+   modalPassword: string()
+      .min(5, 'Minimum must be 5 numbers'),
 })
 
 
 
 export default function App() {
+   const [isOpen, setisOpen] = useState(false)
    const [users, setUser] = useState([])
+
+   const toggleModal = () => {
+      setisOpen(!isOpen)
+   }
+
 
    const handleSubmit = (values, { resetForm }) => {
       const newUser = {
@@ -55,11 +68,20 @@ export default function App() {
                   <p>Забыли пароль?</p>
                </div>
                <div className='App__form-btns'>
-                  <button type='sumbit' name='enter'>Воите</button>
-                  <button type='button' name='signIn' >Регистрация
-                  </button>
+                  <button type='submit' name='enter'>Воите</button>
+                  <button type='button' name='signIn' onClick={toggleModal}>Регистрация</button>
                </div>
-
+               <Modal isOpen={isOpen}>
+                  <h4>Присоединяйтесь к нам</h4>
+                  <Field type='text' name='modalUsername' placeholder='Имя пользователя'></Field>
+                  <ErrorMessage name='modalUsername' component='span' className='Modal__error'></ErrorMessage>
+                  <Field type='password' name='modalPassword' placeholder="Придумайте пароль"></Field>
+                  <ErrorMessage name='modalPassword' component='span' className='Modal__error'></ErrorMessage>
+                  <Field type='password' name='modalPassword' placeholder="Повторите пароль"></Field>
+                  <ErrorMessage name='modalPassword' component='span' className='Modal__error'></ErrorMessage>
+                  <span className='close' onClick={toggleModal}>X</span>
+                  <button type='submit' onClick={handleSubmit}>Входить</button>
+               </Modal>
                <div className='App__users'>
                   <h3>Наши Юзеры </h3>
                   <section className='App__users-frs-section'>
@@ -83,7 +105,6 @@ export default function App() {
                </div>
             </Form>
          </Formik>
-
       </div>
    )
 }

@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import './Post.scss'
 
 export default function App() {
-  const [posts, setPosts] = useState([]);                  //Post
+  const [posts, setPosts] = useState([]);                //Post
   const [findIndex, setfindIndex] = useState(1);         //Distance between
 
   useEffect(() => {

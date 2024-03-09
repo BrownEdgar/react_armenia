@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './FormikHomework/App'
+import App from './ClassName/App'
 
 import './index.css'
 

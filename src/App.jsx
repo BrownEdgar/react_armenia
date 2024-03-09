@@ -7,8 +7,8 @@ export default function App() {
 		e.preventDefault();
 		const form = e.target.parentElement
 		const { password1, password2 } = form
-			setPsw1(password1.value)
-			setPsw2(password2.value)
+		setPsw1(password1.value)
+		setPsw2(password2.value)
 	}
 	return (
 		<div className='App'>
@@ -18,9 +18,9 @@ export default function App() {
 					<input className={psw1 === psw2 && psw1 && psw2 ? 'green' : 'red'} required type="password" name="password1" id="password1" />
 					<label htmlFor="password2">Password 2</label>
 					<input className={psw1 === psw2 && psw1 && psw2 ? 'green' : 'red'} required type="password" name="password2" id="password2" />
-				{
-					!psw1 && !psw2 ? <span>Lրացրեք բաց թողնված դաշտերը</span> : ''
-				}
+					{
+						!psw1 && !psw2 ? <span>Lրացրեք բաց թողնված դաշտերը</span> : ''
+					}
 				</form>
 			</div>
 		</div>

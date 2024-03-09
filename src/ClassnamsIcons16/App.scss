@@ -1,0 +1,58 @@
+body {
+    background-color: rgb(227, 225, 222);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  #root{
+      display: flex;
+  }
+  li {
+    list-style: none;
+  }
+  .App {
+    height: 450px;
+    width: 700px;
+    background-color: rgb(164, 159, 159);
+    margin: 0 auto;
+    padding: 20px 0px;
+    .App__header {
+      .App__header-list {
+        display: flex;
+        gap: 85px;
+        text-align: left;
+        li {
+          font-weight: 800;
+        }
+      }
+    }
+    li:last-child {
+      margin-left: 30px;
+    }
+    .main__section {
+      padding: 5px 10px;
+      display: flex;
+      justify-content: start;
+      gap: 80px;
+      align-items: center;
+      margin: 0 auto;
+      flex-direction: row;
+      p {
+        width: 80px;
+      }
+      button {
+        background-color: red;
+        color: whitesmoke;
+        border-radius: 4px;
+        border: none;
+        padding: 3px 5px;
+      }
+    }
+    .App__sort{
+          i{
+              margin-left: 10px;
+              font-weight: 600;
+              font-size:18px;
+              cursor: pointer;
+          }
+      }
+  }
+  

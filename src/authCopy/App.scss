@@ -1,0 +1,51 @@
+@import './sass/colors';
+@import './sass/variables';
+
+
+.App {
+	user-select: none;
+	table {
+		margin: 0 auto;
+		width: 90%;
+		background-color: #272727;
+		text-transform: capitalize;
+		&,
+		caption {
+			border: 2px solid black;
+
+		}
+		caption {
+			font-weight: 700;
+			font-size: 30px;
+			padding: 10px;
+			border-radius: 10px;
+		}
+		td,
+		th {
+			color: #e5e5e5;
+			width: 30%;
+			padding: 10px;
+			text-align: center;
+			border: 2px solid #fff;
+		}
+		.sorter {
+			cursor: pointer;
+
+		}
+		.javascript {
+			background-color: $javascript-color;
+		}
+		.react {
+			background-color: $react-color;
+		}
+		.next {
+			background-image: $next-color;
+		}
+		.html {
+			background-color: $html-color;
+		}
+	}
+	.error {
+		color: red;
+	}
+}

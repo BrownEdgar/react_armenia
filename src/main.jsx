@@ -1,10 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import './index.css'
-import  Input from './Input/App'
+import App from './Films/App'
 
 ReactDOM.createRoot(document.getElementById('root'))
   .render(
-    <Input />
+    <App />
   )
 

@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react'
-import { Formik, Form, Field, ErrorMessage } from 'formik'
+import { Formik, Form, Field, ErrorMessage, validateYupSchema } from 'formik'
 import { object, string } from 'yup';
 import { nanoid } from 'nanoid';
 import './App.scss';
@@ -23,6 +23,7 @@ export default function App() {
   const [currentUserId, setCurrentUserId] = useState(null);
 
   const handleSubmit = (values) => {
+    console.log(values)
     const newUser = {
       ...values,
       id: nanoid(5)
@@ -54,7 +55,7 @@ export default function App() {
           <Field type='password' name='password' placeholder='Enter your password' />
           <ErrorMessage name='password' component='p' />
           <span>Forget password?</span>
-
+ 
           {/* <div className='btn'> */}
             {/* <button className='btn__signUp' type="submit">Sign up</button> */}
             {/* <button disabled>Register</button> */}

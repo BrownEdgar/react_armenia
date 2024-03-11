@@ -6,6 +6,11 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  font-size: 10px;
+}
+
 body {
   max-width: 1440px;
   margin: 0 auto;

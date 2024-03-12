@@ -1,4 +1,7 @@
 import { ADD_USER, SORTDATE, SORTEMAIL } from "./actionTypes";
+import moment from 'moment'
+
+
 
 export const initialvalue = []
 
@@ -8,7 +11,7 @@ function reducer(state = initialvalue, action) {
     
     case SORTEMAIL: return state.toSorted((a, b)=>{ return (a.email > b.email) ? 1 : -1});
 
-    case SORTDATE: return state.toSorted((a, b)=>{ return (a.date > b.date) ? 1 : -1});
+    case SORTDATE: return state.toSorted((a, b)=>{ return (moment(a.date) > moment(b.date)) ? 1 : -1});
 
     default: return state;
   }

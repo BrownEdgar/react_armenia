@@ -1,0 +1,59 @@
+@import "../../sass/mixins";
+
+.Quotes {
+  @include mainFlex(center, stretch, 24px);
+  padding: 1em;
+  width: 96%;
+  margin: 50px auto;
+  &__elem {
+    background-color: #eee;
+    border-radius: 20px;
+    padding: 2em;
+    width: 45%;
+    position: relative;
+    p {
+      text-align: right;
+      padding: 4px 8px;
+      background-color: teal;
+      color: #fff;
+      border-radius: 4px;
+      width: fit-content;
+      margin-left: auto;
+      margin-top: 20px;
+    }
+  }
+  &__icon {
+    position: absolute;
+
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    top: 8px;
+    right: 10px;
+    background-color: rgba(88, 84, 84, 0.593);
+    padding: 4px 8px;
+    i {
+      font-size: 20px;
+      color: #fff;
+      &.bi-clipboard-check {
+        transition: all 0.3s;
+        font-size: 30px;
+        color: greenyellow;
+      }
+    }
+  }
+}
+
+.slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  & > button {
+    font-size: 24px;
+    border: 2px solid #111;
+    background: transparent;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+}

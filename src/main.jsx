@@ -11,5 +11,5 @@ import Test from './Components/Test/Test.jsx'
 ReactDOM.createRoot(document.getElementById('root'))
   .render(
     // <Users />
-    <Test />
+    <App/>
   )

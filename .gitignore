@@ -26,8 +26,8 @@ dist-ssr
 
 
 # Files & folders that i created
-# src/authCopy
+src/authCopy
 src/Formik
 src/Experiment
 src/ClassName
-src/authCopy
+src/UI

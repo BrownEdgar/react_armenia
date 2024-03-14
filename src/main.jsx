@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './UI/Button/Button'
+import App from './slider/App'
 
 import './index.css'
 

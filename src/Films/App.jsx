@@ -26,7 +26,8 @@ export default function App() {
 
     return (
         <div className='App'>
-            <h1>Showing {films.length} movies in the database</h1>
+            <h1>Showing {films.length} movies in the database
+            </h1>
             <table>
                 <thead>
                     <tr>

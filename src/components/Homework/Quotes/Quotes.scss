@@ -1,0 +1,19 @@
+.quotes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.quotes__Content {
+    width: calc(33.333% - 20px);
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.quotes__Content h1 {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+}

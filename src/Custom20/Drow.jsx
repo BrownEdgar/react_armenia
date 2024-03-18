@@ -7,14 +7,15 @@ import PropsValidaton from './PropsValidaton';
 export default function Drow() {
   const [users, setUsers] = useState([]);
 
+
   useEffect(() => {
     axios.get('https://dummyjson.com/quotes')
       .then(res => setUsers(res.data.quotes))
   }, []);
   return (
     <div>
-      <PropsValidaton users={users} />
+      <PropsValidaton users={users} setUsers={setUsers} />
     </div>
   );
-  
+
 }

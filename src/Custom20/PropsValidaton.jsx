@@ -4,21 +4,22 @@ import classNames from 'classnames'
 import { useEffect } from 'react'
 
 
-export default function PropsValidaton({ users }) {
-  const [isLiked, setIsLiked] = useState(()=>{
-    const saveLiked = localStorage.getItem('likesIcons')
-    return saveLiked ? JSON.parse(saveLiked) : {}
-  })
-
-  useEffect(() => {
-   localStorage.setItem('likesIcons', JSON.stringify(isLiked))
-  }, [isLiked])
-  
+export default function PropsValidaton({ users, setUsers }) {
+  const [likedArr, setLikedArr] = useState([])
   const handleLike = (id) => {
-    setIsLiked(prevIsLicked=>({
-      ...prevIsLicked,
-      [id]:!prevIsLicked[id]
-    }))
+    // const result = users.map(elem => {
+    //   if (elem.id === id) {
+    //     elem.like = !elem.like;
+    //   }
+    //   return elem;
+    // })
+    // setUsers(result)
+    if (likedArr.includes(id)) {
+      console.log('ok')
+      setLikedArr(likedArr.filter(elem => elem !== id))
+    } else {
+      setLikedArr([...likedArr, id])
+    }
   }
 
   return (
@@ -27,12 +28,12 @@ export default function PropsValidaton({ users }) {
         {users.map(elm => (
           <div key={elm.id}>
             <h3>{elm.author}
-              <i 
-                onClick={() => handleLike(elm.id)} 
+              <i
+                onClick={() => handleLike(elm.id)}
                 className={classNames('bi', {
-                  'bi-star': !isLiked[elm.id],
-                  'bi-star-fill': isLiked[elm.id]
-              })}></i>
+                  'bi-star': !likedArr.includes(elm.id),
+                  'bi-star-fill': likedArr.includes(elm.id)
+                })}></i>
             </h3>
             <p>{elm.quote}</p>
           </div>

@@ -20,7 +20,9 @@ h2 {
 }
 
 p {
-  font-size: 1.6em;
+  font-size: 2em;
+  margin: 12px 0;
+  line-height: 1.5;
 }
 
 body {
@@ -42,21 +44,4 @@ a {
 
 ul {
   list-style: none;
-}
-
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  width: 1200px;
-  margin: 50px auto;
-}
-
-.container>div {
-  padding: 1em;
-  background-color: #ebeaea;
-  border-radius: 12px;
-  width: 250px;
-  height: 200px;
 }

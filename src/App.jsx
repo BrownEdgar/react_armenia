@@ -4,11 +4,11 @@ import Local from './Components/18.03.24/local/Local'
 
 
 export default function App() {
-    return (
-      <div>
-        <Aphorisms />
-        {/* <Local /> */}
-        
-      </div>
-    )
+  return (
+    <div>
+      {/* <Aphorisms /> */}
+      <Local />
+
+    </div>
+  )
 }

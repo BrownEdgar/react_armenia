@@ -1,0 +1,25 @@
+.Contact{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    margin: 20px 0;
+    button{
+        padding: 10px 15px;
+    }
+    .left{
+        font-weight: 400;
+        background-color: rgba(117, 18, 18, 0.872);
+        color: white;
+        letter-spacing: 3px;
+    }
+    .right{
+        background-color: green;
+        font-weight: 400;
+        color: white;
+        letter-spacing: 3px;
+    }
+    .left:disabled{
+        background-color: rgba(117, 18, 18, 0.197);
+    }
+}

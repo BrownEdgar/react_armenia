@@ -21,6 +21,7 @@ export default function App() {
         <Route element={<Contact/>} path={NavContact}/>
       </Routes>
       <Footer/>
+
     </div>
   )
 }

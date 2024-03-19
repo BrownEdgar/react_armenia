@@ -1,0 +1,28 @@
+.Posts {
+  h1 {
+    text-align: center;
+    letter-spacing: 5px;
+  }
+  .Posts__section {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    .Posts__card {
+      border: 1px solid rgba(128, 128, 128, 0.575);
+      height: 200px;
+      width: 350px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      text-align: center;
+    }
+    h4 {
+      padding: 0px 2px;
+    }
+    p {
+      width: 350px;
+    }
+  }
+}

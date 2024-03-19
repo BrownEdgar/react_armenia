@@ -1,5 +1,10 @@
 import React from 'react'
 import './Blog.scss'
+import first from '../../assets/first.jpg'
+import second from '../../assets/second.jpg'
+import third from '../../assets/third.jpg'
+
+
 
 export default function Blog() {
   return (
@@ -8,15 +13,15 @@ export default function Blog() {
       <div className='Blog__card'>
         <div className='Card'>
           <p>Lorem ipsum.</p>
-          <img src="./public/Images/first.jpg"  />
+          <img src={first} />
         </div>
         <div className='Card'>
           <p>Lorem ipsum dolor sit.</p>
-          <img src="./public/Images/second.jpg"  />
+          <img src={second} />
         </div>
         <div className='Card'>
           <p>Lorem, ipsum dolor.</p>
-          <img src="./public/Images/third.jpg"  />
+          <img src={third} />
         </div>
       </div>
     </div>

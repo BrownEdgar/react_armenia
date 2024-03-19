@@ -1,0 +1,38 @@
+
+.Header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 0 200px;
+    box-shadow: 0 8px 16px rgb(0 0 0/8%);
+
+    img{
+        width: 140px;
+        height: 60px;
+
+    }
+    &__pages{
+        display: flex;
+
+        .dif{
+            padding: 34px 18px;
+        text-decoration: none;
+        color: black;
+        }
+    }
+    &__btn{
+        background-color: #f3b01b;
+    border: 1px solid #f3b01b;
+    box-shadow: 0 4px 10px rgba(0,0,0,.05);
+    border-radius: 30px;
+    padding: 12px 35px;
+    color: #fff !important;
+    display: inline-block;
+    transition: all .4s;
+    width: 182px;
+    height: 41px;
+    margin: 0;
+    cursor: pointer;
+    }
+}

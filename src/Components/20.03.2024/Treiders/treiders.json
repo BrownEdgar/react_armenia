@@ -1,0 +1,27 @@
+[
+    {
+        "img":"https://smartcode.am/public/image/staff/1.png?v=1.2",
+        "name":"Էդգար",
+        "position":"MERN-STACK"
+    },
+    {
+        "img":"https://smartcode.am/public/image/staff/15.png",
+        "name":"Հայկ",
+        "position":"HTML/CSS/JS"
+    },
+    {
+        "img":"https://smartcode.am/public/image/staff/5.png",
+        "name":"Էմիլ",
+        "position":"Front-End"
+    },
+    {
+        "img":"https://smartcode.am/public/image/staff/6.png",
+        "name":"Ռոման",
+        "position":"React.js"
+    },
+    {
+        "img":"https://smartcode.am/public/image/staff/11.png?v=1.2",
+        "name":"Քրիստինե",
+        "position":"JavaScript"
+    }
+]

@@ -15,15 +15,14 @@ export default function Contact() {
     setIndex(index - 1)
   }
 
-  const rightCiick = ()=>{
+  const rightCiick = () => {
     setIndex(index + 1)
   }
 
   return (
     <div className='Contact'>
-     
-        <button onClick={leftClick} disabled={index === 0} className='left'> Left</button>
-    
+      <button onClick={leftClick} disabled={index === 0} className='left'> Left</button>
+
       {
         users.length > 0 ? (
           <div key={users[0].id} className='Contact__section'>

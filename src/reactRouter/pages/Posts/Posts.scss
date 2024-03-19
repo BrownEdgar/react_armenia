@@ -1,0 +1,13 @@
+.Posts__items {
+  display: flex;
+gap: 20px;
+flex-wrap: wrap;
+  .item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+    background-color: beige;
+    padding: 15px;
+  }
+}

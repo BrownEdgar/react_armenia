@@ -10,7 +10,7 @@ import './App.scss'
 
 
 export default function App() {
-  const [arr, setArr] = useState([{ id: 1, first: true }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }])
+  const [arr, setArr] = useState([{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }])
 
   const handleClick = (id) => {
     setArr(arr.map(elm=>{elm.like = false}))
@@ -40,7 +40,7 @@ export default function App() {
           {
             arr.map((elm) => {
               return (
-                <i key={elm.id} id={elm.id} className={classNames("bi bi-star", { 'red': elm.like, 'first': elm.first })} onClick={() => handleClick(elm.id)}></i>
+                <i key={elm.id} id={elm.id} className={classNames("bi bi-star", { 'red': elm.like })} onClick={() => handleClick(elm.id)}></i>
               )
             })
           }

@@ -1,0 +1,18 @@
+@import '../sass/mixins';
+@import '../sass/colors';
+
+
+.Comments{
+    background-color: $comments-text-color;
+    @include mainThing();
+
+    &__item{
+        background-color: $background-color;
+        @include itemOfThing();
+        
+    }
+    &__id{
+        @include idOfThing();
+        border: 2px solid $comments-text-color;
+    }
+}

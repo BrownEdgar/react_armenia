@@ -1,0 +1,37 @@
+.Aphorisms {
+  background-color: beige;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+  padding: 25px;
+  gap: 25px;
+
+
+  &__icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30%;
+    border: 2px solid red;
+    border-radius: 15px;
+    padding: 15px;
+  }
+
+  &__authors {
+    font-size: 10px;
+  }
+  
+  &__little-part {
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+  }
+  .bi{
+    cursor: pointer;
+  }
+  .red{
+    color: red;
+  }
+}

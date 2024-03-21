@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import { Navbar } from '../Navbar/Navbar'
 import { Outlet } from 'react-router-dom'
 import classNames from 'classnames'
+import moment from 'moment'
+import './Layouts.scss'
+
 
 export default function Layouts() {
   const [arr, setArr] = useState([{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }])
@@ -17,10 +20,17 @@ export default function Layouts() {
     setArr(result)
   }
 
+const [date, setDate] = useState('');
+setInterval(() => {
+  setDate( moment().format(' h:mm:ss a') )
+}, 1000);
+
+
   return (
     <>
       <Navbar />
       <main>
+        <span className='time'><i class="bi bi-alarm"></i>{date} </span>
         <Outlet />
       </main>
       <footer>

@@ -1,12 +1,10 @@
 import React, { useState } from 'react'
-import Home from './pages/Home/Home'
-import About from './pages/About/About'
-import Blog from './pages/Blog/Blog'
-import Posts from './pages/Posts/Posts'
-import Navbar from './Components/Navbar/Navbar'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate} from 'react-router-dom'
 import classNames from "classnames";
 import './App.scss'
+import ROUTES from './routes';
+import { Home, About, Blog, ErrorPage, Posts} from '.';
+import { Navbar } from './Components/Navbar/Navbar';
 
 
 export default function App() {
@@ -28,10 +26,12 @@ export default function App() {
       <Navbar />
       <main>
         <Routes>
-          <Route element={<Home />} path='/' />
-          <Route element={<About />} path='/about' />
-          <Route element={<Blog />} path='/blog' />
-          <Route element={<Posts />} path='/post' />
+          <Route path={ROUTES.HOME} element={<Home />} />
+          <Route path={ROUTES.ABOUT} element={<About />} />
+          <Route path={ROUTES.BLOG} element={<Blog />} />
+          <Route path={ROUTES.POST} element={<Posts />} />
+          <Route path='*' element={<ErrorPage />} />
+
         </Routes>
       </main>
       <footer>

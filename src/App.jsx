@@ -1,26 +1,35 @@
 import React from 'react'
-import { About, Blog, ErrorPage, Home } from './pages'
+import { About, Blog, ErrorPage, Home, Post } from './pages'
 import Navbar from './components/Navbar/Navbar'
-import { Routes, Route } from 'react-router-dom'
+import { Route, createBrowserRouter, RouterProvider, createRoutesFromElements } from 'react-router-dom'
 import ROUTES from './routes'
 import './App.scss'
+import Layouts from './components/Navbar/Layouts/Layouts'
+import { postsLoader } from './pages/About/About'
+import { getSpecialPost } from './pages/Post/Post'
+import Galery from './pages/Galery/Galery'
+
 
 export default function App() {
+
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path='/' element={<Layouts />}>
+        <Route index element={<Home />} />
+        <Route path='posts' element={<About />} loader={postsLoader} />
+        <Route path='blog' element={<Blog />} />
+        <Route path='posts/:id' element={<Post />} loader={getSpecialPost} />
+        <Route path='galery' element={<Galery />} />
+        <Route path='*' element={<ErrorPage />} />
+      </Route>
+    )
+  )
+
+
   return (
     <div className='App'>
-      <Navbar />
-      <main>
-        <Routes >
-          <Route path={ROUTES.HOME} element={<Home />} />
-          <Route path={ROUTES.ABOUT} element={<About />} />
-          <Route path={ROUTES.BLOG} element={<Blog />} />
-          <Route path='*' element={<ErrorPage />} />
-        </Routes>
-      </main>
 
-      <footer>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi odio officiis pariatur, minima cupiditate, laborum commodi deleniti tenetur harum blanditiis veritatis accusamus impedit! Voluptas praesentium dolores suscipit voluptatem voluptate quia commodi quis. Dicta illo modi nemo itaque consequatur est quos!</p>
-      </footer>
+      <RouterProvider router={router} />
 
     </div>
   )

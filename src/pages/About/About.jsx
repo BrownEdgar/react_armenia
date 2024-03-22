@@ -1,13 +1,30 @@
-import React from 'react'
+import React from 'react';
+import axios from 'axios';
+import { Link, useLoaderData } from 'react-router-dom';
 import './About.scss'
-import Navbar from '../../components/Navbar/Navbar'
 
 export default function About() {
+
+  const posts = useLoaderData()
   return (
     <div className='About'>
-      <h1>About Page</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae qui officiis cupiditate ratione debitis natus eveniet iusto nisi rerum ab, facilis temporibus maiores quam voluptate labore fuga pariatur, deserunt quas.</p>
+      <h1>Posts Page</h1>
+      {
+        posts.map(elem => {
+          return (
+            <Link key={elem.id} to={`${elem.id}`}>{elem.title}</Link>
+          )
+        })
+      }
 
     </div>
   )
+}
+
+
+
+export const postsLoader = async (a, b) => {
+  console.log({ a, b })
+  const response = await axios('https://jsonplaceholder.typicode.com/posts')
+  return response.data
 }

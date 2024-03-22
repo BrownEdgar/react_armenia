@@ -1,8 +1,14 @@
 .App {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
   main {
-    margin: 50px auto;
+    margin-bottom: 30px;
+
     background-color: #eee;
     padding: 16px;
+    flex-grow: 1;
   }
   .Link {
     background-color: royalblue;

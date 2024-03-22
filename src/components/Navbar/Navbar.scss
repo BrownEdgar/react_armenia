@@ -27,6 +27,13 @@ header {
       height: 100%;
       li {
         font-size: 20px;
+
+        a {
+          &.active_link {
+            color: orangered;
+            border-bottom: 1px solid orangered;
+          }
+        }
       }
     }
   }

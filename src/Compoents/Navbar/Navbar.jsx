@@ -15,10 +15,10 @@ export default function Navbar() {
               <li>
                 <Link to={ROUTES.HOME}>Home</Link>
               </li>
-               <li>
+              <li>
                 <Link to={ROUTES.ABOUT}>About</Link>
               </li>
-               <li>
+              <li>
                 <Link to={ROUTES.BLOG}>Blog</Link>
               </li>
             </ul>
@@ -26,6 +26,6 @@ export default function Navbar() {
         </div>
       </div>
     </header>
-    
+
   )
 }

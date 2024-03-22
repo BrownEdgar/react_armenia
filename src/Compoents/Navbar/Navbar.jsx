@@ -1,24 +1,25 @@
 import React from 'react'
 import './Navbar.scss'
 import { Link } from "react-router-dom";
+import ROUTES from '../../routes';
 
 export default function Navbar() {
   return (
     <header>
       <div className="logo">
-        <Link to="/">LOGO</Link>
+        <Link to={ROUTES.HOME}>LOGO</Link>
         <div>
           <nav>
             <ul>
 
               <li>
-                <Link to="/">Home</Link>
+                <Link to={ROUTES.HOME}>Home</Link>
               </li>
                <li>
-                <Link to="/about">About</Link>
+                <Link to={ROUTES.ABOUT}>About</Link>
               </li>
                <li>
-                <Link to="/blog">Blog</Link>
+                <Link to={ROUTES.BLOG}>Blog</Link>
               </li>
             </ul>
           </nav>

@@ -8,8 +8,8 @@ export default function PrivateRoute() {
 
   return (
     <div>
-      {/* {islogin ? <Outlet/> : <Navigate to='/'/>} */}
-      <Outlet context={{backetCount : 8}}/>
+      {islogin ? <Outlet/> : <Navigate to='/'/>}
+      {/* <Outlet context={{backetCount : 8}}/> */}
     </div>
   )
 }

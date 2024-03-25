@@ -4,7 +4,6 @@ import { Link, useLoaderData } from 'react-router-dom'
 import './About.scss'
 
 export default function About() {
-  
   const posts = useLoaderData()
   return (
     <div className='About'>

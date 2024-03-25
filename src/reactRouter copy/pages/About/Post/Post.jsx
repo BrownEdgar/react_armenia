@@ -31,7 +31,7 @@ export default function Post() {
 }
 
 export const getSpecialPost = async ({ params }) => {
-  const response = await axios(`https://jsonplaceholder.typicode.com/todos?_limit=5/${params.id}`)
+  const response = await axios(`https://jsonplaceholder.typicode.com/todos/${params.id}`)
   console.log(response.data);
   return response.data
 }

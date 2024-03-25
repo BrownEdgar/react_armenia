@@ -8,6 +8,7 @@ import { Navbar } from './Components/Navbar/Navbar';
 import Layouts from './Components/Layouts/Layouts';
 import { postsLoader } from './pages/About/About';
 import { getSpecialPost } from './pages/About/Post/Post';
+import PrivateRoute, { checkUser } from './Components/PrivateRoute/PrivateRoute';
 
 
 export default function App() {
@@ -16,9 +17,11 @@ export default function App() {
     createRoutesFromElements(
       <Route path='/' element={<Layouts />}>
         <Route index element={<Home />} />
+        <Route element={<PrivateRoute/>} loader={checkUser}>
         <Route path='posts' element={<About />} loader={postsLoader} />
         <Route path='posts/:id' element={<Post />}  loader={getSpecialPost}/>
         <Route path='blog' element={<Blog />} />
+        </Route>
         <Route path='*' element={<ErrorPage />} />
       </Route>
     )

@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link, NavLink} from 'react-router-dom'
+import {Link, NavLink, useNavigate} from 'react-router-dom'
 import './Navbar.scss'
 import ROUTES from '../../routes'
 
@@ -9,6 +9,14 @@ import ROUTES from '../../routes'
 // className={navClass}
 
 export function Navbar() {
+const navigate  = useNavigate()
+
+const logOut=()=>{
+  localStorage.removeItem('login')
+  navigate('/')
+}
+
+
   return (
     <header>
       <div className="logo">
@@ -24,6 +32,9 @@ export function Navbar() {
           </li>
           <li>
             <NavLink to={ROUTES.BLOG}>Blog</NavLink>
+          </li>
+          <li>
+            <button onClick={logOut}>log Out</button>
           </li>
         </ul>
       </nav>

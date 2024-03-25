@@ -20,7 +20,7 @@ export default function Layouts() {
     setArr(result)
   }
 
-const [date, setDate] = useState('');
+const [date, setDate] = useState( moment().format(' h:mm:ss a'));
 setInterval(() => {
   setDate( moment().format(' h:mm:ss a') )
 }, 1000);
@@ -30,7 +30,7 @@ setInterval(() => {
     <>
       <Navbar />
       <main>
-        <span className='time'><i class="bi bi-alarm"></i>{date} </span>
+        <span className='time'><i className="bi bi-alarm"></i>{date} </span>
         <Outlet />
       </main>
       <footer>

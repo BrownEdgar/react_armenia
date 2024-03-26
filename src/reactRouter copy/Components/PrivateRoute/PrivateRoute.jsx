@@ -5,18 +5,18 @@ import ROUTES from '../../routes';
 export default function PrivateRoute() {
 
   const islogin = useLoaderData()
-
+  console.log(islogin);
   return (
     <div>
-      {islogin ? <Outlet/> : <Navigate to='/'/>}
+      {islogin ? <Outlet /> : <Navigate to='/' />}
       {/* <Outlet context={{backetCount : 8}}/> */}
     </div>
   )
 }
 
 
-export const checkUser= ()=>{
-  return localStorage.getItem('login' ? true :  false)
+export const checkUser = () => {
+  return localStorage.getItem('login') ? true : false
 }
 
 

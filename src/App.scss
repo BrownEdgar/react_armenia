@@ -1,0 +1,12 @@
+.App {
+  user-select: none;
+
+  button {
+    cursor: pointer;
+    margin-top: 15px;
+  }
+  .each-user{
+    display: inline-block;
+    margin: 5px;
+  }
+}

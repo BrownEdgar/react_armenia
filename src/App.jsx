@@ -1,23 +1,32 @@
 import React from 'react'
-import { About, ContactUs, Home, News, OurProducts } from './components/Pages';
-import Navbar from './components/Navbar/Navbar'
-import { Routes, Route } from "react-router-dom";
-import ROUTES from './routes';
+import { useSelector, useDispatch } from 'react-redux'
+import { addUser, sortUser } from './feuture/userSlice'
+import { nanoid } from '@reduxjs/toolkit';
+import Button from './UA/Buttons/Button';
+import  './App.scss'
+
 
 
 export default function App() {
+  const user = useSelector((state) => state.user)
+  const dispatch = useDispatch()
+
+  const handleSorted=()=>{
+    dispatch(sortUser())
+  }
   return (
-    <div>
-      <Navbar/>
-      <main>
-        <Routes>
-          <Route path={ROUTES.HOME} element={<Home/>}/>
-          <Route path={ROUTES.ABOUT} element={<About/>}/>
-          <Route path={ROUTES.OURPRODUCTS} element={<OurProducts/>}/>
-          <Route path={ROUTES.NEWS} element={<News/>}/>
-          <Route path={ROUTES.CONTACTUS} element={<ContactUs/>}/>
-        </Routes>
-      </main>
+    <div className='App'>
+      {
+        user.map((elem) => {
+          return (
+            <div className='App__content' key={elem.id}>
+              <h1>{elem.name}</h1>
+            </div>
+          )
+        })
+      }
+      <Button title='Add users' onclick = {()=> dispatch(addUser({id: nanoid(5), name: 'Arshavir'}))}/>
+      <Button title='Sort Users' onclick={handleSorted}/>
     </div>
   )
 }

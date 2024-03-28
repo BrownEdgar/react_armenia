@@ -1,0 +1,49 @@
+@import './sass/colors';
+
+.Users {
+  background-color: $background-color;
+  color: $text-color;
+  padding: 15px;
+  .addPart{
+    display: grid;
+    grid-template-columns: 1fr 100px;
+    height: 35px;
+    margin-bottom: 25px;
+  }
+  
+  input {
+    border-radius: 5px;
+    background-color: $add-color; 
+    padding-left: 10px;   
+    
+    &::placeholder {
+      color: $background-color;
+    }
+  }
+  button{
+  border-radius: 5px;
+  cursor: pointer;
+  &:active{
+    scale: 1.1;
+  }
+  &.addUserBtn{
+    border: 1px solid $add-color;
+    background-color: transparent;
+  }
+
+}
+  &__each {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid $text-color;
+    background-color: $users-background-colors;
+
+    button {
+      color: $text-color;
+      padding: 5px;
+      background-color: $button-color;
+      border-radius: 5px;
+    }
+  }
+}

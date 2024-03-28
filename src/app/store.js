@@ -1,15 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
+import useresSlice from '../features/usersSlice/usersSlice'
+
 
 export const store = configureStore({
   reducer: {
-    shuffle
+
+    users:useresSlice
   },
 })
+ export default store
 
 
-
-// - Խառնել arr զանգվածը(shuffle)
-// - arr զանգվածի մեջ ավելացնել պատահական եռանիշ թիվ
-// - փոխել user օբյեկտի name հատկությունը
-// - arr զանգվածը սորտավորել
-// - arr զանգվածի գումարը հաշվել պահել total-հատկության մեջ

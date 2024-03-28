@@ -1,15 +1,16 @@
-import { configureStore } from '@reduxjs/toolkit'
+import { configureStore } from "@reduxjs/toolkit";
+import {nanoid}from 'nanoid'
+import useresSlice from "../features/usersSlice/usersSlice";
 
+const genderMiddleWeare = (store) =>(next)=>(action)=>{
+  if (action.type=='user/addUser') {
+    action.payload.id=nanoid(6)
+  }
+}
 export const store = configureStore({
   reducer: {
-    shuffle
+    users: useresSlice,
   },
-})
-
-
-
-// - Խառնել arr զանգվածը(shuffle)
-// - arr զանգվածի մեջ ավելացնել պատահական եռանիշ թիվ
-// - փոխել user օբյեկտի name հատկությունը
-// - arr զանգվածը սորտավորել
-// - arr զանգվածի գումարը հաշվել պահել total-հատկության մեջ
+   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(genderMiddleWeare),
+});
+export default store;

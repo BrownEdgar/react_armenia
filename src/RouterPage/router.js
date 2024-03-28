@@ -1,5 +1,0 @@
-export const NavHome = '/'
-export const NavBlog = '/Blog'
-export const NavPosts = '/Posts'
-export const NavUsers = '/Users'
-export const NavContact = 'Contact'

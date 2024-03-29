@@ -20,7 +20,7 @@ function App() {
       id: nanoid(5),
       name: message
     };
-    dispatch(addUser(userName));
+
     formik.resetForm();
   };
 

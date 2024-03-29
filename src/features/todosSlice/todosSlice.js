@@ -18,12 +18,11 @@ const todosSlice = createSlice({
   initialState: initialStateValue,
   reducers: {
     addTodo(state, { payload }) {
-      state.push(payload);
+      console.log(payload)
+      state.data.push(payload);
       return state
     },
-    addTodos(state, { payload }) {
-      return [...state, ...payload]
-    }
+
   },
   extraReducers: (builder) => {
     builder

@@ -3,18 +3,17 @@ import './Todos.scss'
 import { Field, Form, Formik } from 'formik'
 import { useSelector, useDispatch } from 'react-redux'
 import { nanoid } from 'nanoid'
-import { addTodo, addTodos, getAsyncTodos } from '../../features/todosSlice/todosSlice'
+import { addTodo, getAsyncTodos } from '../../features/todosSlice/todosSlice'
 
-import { getAllusers, getAsyncUsers } from '../../features/usersSlice/userSlice'
+import { getAsyncUsers } from '../../features/usersSlice/userSlice'
 
 export default function Todos() {
-  const { data, error, loading } = useSelector((state) => state.todos)
-  const users = useSelector(getAllusers())
-  console.log(loading)
+  const { data } = useSelector((state) => state.todos)
+
+
   const dispatch = useDispatch()
   const handleSubmit = ({ message }, formik) => {
     const todo = {
-      id: nanoid(8),
       message,
     }
     dispatch(addTodo(todo))
@@ -22,7 +21,6 @@ export default function Todos() {
   }
 
   useEffect(() => {
-
     dispatch(getAsyncUsers())
   }, [])
 

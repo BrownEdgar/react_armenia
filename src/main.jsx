@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './redux2Fetch/App'
-import store from './redux2Fetch/app/store'
+import App from './redux3middleware/App'
+import store from './redux3middleware/app/store'
 import { Provider } from 'react-redux'
 
 ReactDOM.createRoot(document.getElementById('root'))

@@ -2,11 +2,12 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { addNewUser, deleteChoosenOne, getAsyncUsers } from './features/usersSlice';
 import './App.scss'
-import { Formik, Form, Field } from 'formik'
-
+import { Formik, Form, Field, ErrorMessage } from 'formik'
+import { nanoid } from '@reduxjs/toolkit';
+import { object, string } from 'yup'
 
 export default function App() {
-  const users = useSelector((state) => state.users)
+  const { data } = useSelector((state) => state.users)
   const dispatch = useDispatch()
 
 
@@ -14,34 +15,37 @@ export default function App() {
     dispatch(getAsyncUsers())
   }, []);
 
-  function handleSubmit({newUserName}, formik){
-dispatch(addNewUser({name : newUserName}))
-formik.resetForm()
+  function handleSubmit({ newUserName }, formik) {
+    dispatch(addNewUser({ name: newUserName, id: nanoid(5) }))
+    formik.resetForm()
   }
-
-  const { data } = users
+  const validationSchema = object({
+    newUserName: string().required('you should fill in the field!')
+  })
   return (
     <div className='Users'>
       <h1>Users</h1>
-        <Formik
-          initialValues={{ newUserName : ''}}
+      <Formik
+        validationSchema={validationSchema}
+        initialValues={{ newUserName: '' }}
         onSubmit={handleSubmit}
-        >
+      >
         <Form className='addPart'>
           <Field name='newUserName' type="text" placeholder='New user name' />
-         <button className='addUserBtn' type='submit'>Add user</button>
+          <input value={'Add User'} className='addUserBtn' type='submit' />
+          <ErrorMessage className='error' name='newUserName' component={'span'} />
         </Form>
       </Formik>
       {
-    data.map(elm => {
-      return (
-        <div key={elm.id || elm.name} className='Users__each'>
-          <span>{elm.name}</span>
-          <button onClick={() => dispatch(deleteChoosenOne({ users: { data }, id: elm.id }))}>Delete</button>
-        </div>
-      )
-    })
-  }
+        data.map(elm => {
+          return (
+            <div key={elm.id} className='Users__each'>
+              <span>{elm.name}</span>
+              <button onClick={() => dispatch(deleteChoosenOne({ id: elm.id }))}>Delete</button>
+            </div>
+          )
+        })
+      }
     </div >
   )
 }

@@ -1,0 +1,49 @@
+@import './sass//colors';
+
+.Gender {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid $border;
+  text-align: center;
+  margin: 100px auto;
+  width: 90%;
+  user-select: none;
+  color: $gender-color;
+
+  .chooseGender {
+    background-color: $border;
+    display: flex;
+    justify-content: space-around;
+    padding-block: 5px;
+
+    button {
+      cursor: pointer;
+      width: 100px;
+      height: 30px;
+      border-radius: 12px;
+      color: $button-text-color;
+      background-color: $button-bcc;
+
+      &:active {
+        scale: 1.1;
+      }
+    }
+  }
+
+  .showGenders {
+    background-color: $showGenders-bcc;
+
+    .datas {
+      display: grid;
+      grid-template-columns: repeat(2, 50%);
+      border: 2px solid $border;
+      margin-bottom: 5px;
+      font-size: 20px;
+    }
+
+    .headers {
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+}

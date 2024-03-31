@@ -4,90 +4,82 @@ const initialState = [
   {
     name: 'Varduhi',
     gender: 'female',
-    id: nanoid(5),
-    age: 14
+    email : 'varduhidanielyan1988@email.ru',
+    id : nanoid(5)
   },
   {
     name: 'Matilda',
     gender: 'female',
-    id: nanoid(5),
-    age: 56
+    email : 'Matilda@email.ru',
+    id : nanoid(5)
   },
   {
     name: 'Gayane',
     gender: 'female',
-    id: nanoid(5),
-    age: 62
+    email : 'gay.ghazaryan004@email.ru',
+    id : nanoid(5)
   },
   {
     name: 'Arsen',
     gender: 'male',
-    id: nanoid(5),
-    age: 43
+    email : 'arsenshahbazyan@email.ru',
+    id : nanoid(5)
   },
   {
     name: 'Narek',
     gender: 'male',
-    id: nanoid(5),
-    age: 25
+    email : 'n.manukyan.h@email.ru',
+    id : nanoid(5)
   },
   {
     name: 'Manana',
     gender: 'female',
-    id: nanoid(5),
-    age: 31
+    email : 'meliqsetyan.m@email.ru',
+    id : nanoid(5)
   },
   {
     name: 'Murad',
     gender: 'male',
-    id: nanoid(5),
-    age: 78
-  },
-  {
-    name: 'Hakob',
-    gender: 'male',
-    id: nanoid(5),
-    age: 63
+    email : 'hakobyan@email.ru',
+    id : nanoid(5)
   },
   {
     name: 'Mane',
     gender: 'female',
-    id: nanoid(5),
-    age: 22
+    email : 'm.aneeh@email.ru',
+    id : nanoid(5)
   },
   {
     name: 'Hayk',
     gender: 'male',
-    id: nanoid(5),
-    age: 75
+    email : 'gasparyanhayk@email.ru',
+    id : nanoid(5)
   },
   {
     name: 'Roman',
     gender: 'male',
-    id: nanoid(5),
-    age: 15
+    email : 'romannnn@email.ru',
+    id : nanoid(5)
   },
 ]
-
-// createAsyncThunk
 
 const gendersSlice = createSlice({
   name: 'gender',
   initialState: initialState,
   reducers: {
-    preferMale: (state, action) => {
-
-    }
+    
   },
-  // extraReducers: (builder)=>{
+  selectors : {
+    getAllGenders : (state)=>state,
+    getMaleGanders : (state)=>{
+      return state.filter(elm=>elm.gender === 'male')
+    },
+    getFemaleGanders : (state)=>state.filter(elm=>elm.gender === 'female')
+  }
 
-  // }
 })
 
-
 export default gendersSlice.reducer
-
-// export const {} = gendersSlice.actions
-
+export const {getAllGenders, getMaleGanders, getFemaleGanders} = gendersSlice.selectors
 
 

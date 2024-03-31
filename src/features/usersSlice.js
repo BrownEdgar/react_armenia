@@ -10,22 +10,18 @@ const initialValues = {
 export const getAsyncUsers = createAsyncThunk(
   "users/getAsyncUsers",
   async () => {
-    const res = await axios("https://jsonplaceholder.typicode.com/users");
+    const res = await axios("http://localhost:3000/users");
     return res.data;
   }
 );
-
 const usersSlice = createSlice({
   name: "users",
   initialState: initialValues,
   reducers: {
-    addUser(state, { payload }) {
-      state.data.push(payload);
-      return state;
-    },
-    deleteUser(state, action) {
-      state.data = state.data.filter((user) => user.id !== action.payload);
-    },
+    sortCategory(state,action){
+      state.data = state.data.filter((user) => user.category !== action.payload);
+      console.log(action.payload);
+    }
   },
   extraReducers: (builder) => {
     builder
@@ -39,9 +35,10 @@ const usersSlice = createSlice({
       .addCase(getAsyncUsers.rejected, (state, action) => {
         state.status = "failure";
         state.error = action.error;
-      });
+      })
+      ;
   },
 });
 
 export default usersSlice.reducer;
-export const { addUser, deleteUser } = usersSlice.actions;
+export const { sortCategory } = usersSlice.actions;

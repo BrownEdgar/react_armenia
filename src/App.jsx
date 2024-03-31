@@ -1,51 +1,39 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { addRandomNumber } from './features/countSlice'
-import { addUser, deleteUser, getAsyncUsers } from './features/usersSlice'
-import {Formik,Form,Field} from 'formik'
-import { nanoid } from '@reduxjs/toolkit'
+import React, {useEffect, useState} from 'react'
+import {useDispatch, useSelector} from 'react-redux'
+import { getAsyncUsers, sortCategory} from './features/usersSlice'
+import {nanoid} from '@reduxjs/toolkit'
 import './App.scss'
 
 export default function App() {
- const dispatch = useDispatch()
- const users = useSelector((state)=>state.users.data)
-
-  useEffect(() => {
-    dispatch(getAsyncUsers())
-  }, [])
-  const hendleSubmit= ({message},formik) =>{
-    const user = {
-      id:nanoid(8),
-      message,
+    const dispatch = useDispatch()
+    const users = useSelector((state) => state.users.data)
+    const [categorys, setCategorys] = useState(users)
+console.log(categorys);
+    useEffect(() => {
+        dispatch(getAsyncUsers())
+    }, [])
+    
+    const hendleSort =(category)=>{
+      const res = users.filter((clothes)=>clothes.category!==category)
+      setCategorys(res)
     }
-    dispatch(addUser(user))
-    formik.resetForm()
-  }
-  const hendleDel = (userID)=>{
-    dispatch(deleteUser(userID))
-  }
-  return (
-    <div className='Users'>
-      <Formik
-      initialValues={{message:''}}
-      onSubmit={hendleSubmit}>
-        <Form>
-          <div>
-            <Field className='Users__input' type="text" placeholder={"New user name"} name="message"/>
-            <input className='Users__add' type="submit" value={"ADD USER"}/>
-          </div>
-        </Form>
-      </Formik>
-      {
-        users.map((elm)=>{
-          return (
-            <div className='Users__name' key={elm.id}>
-              <p>{elm.name ||elm.message}</p>
-              <button className='Users__del' onClick={()=>hendleDel(elm.id)}>Delete</button>
-            </div>
-          )
-        })
-      }
-    </div>
-  )
+    return (
+        <div className='Users'>
+            <button onClick={()=>hendleSort("men's clothing")}> man's</button>
+            <button onClick={()=>hendleSort("women's clothing")}> woman's</button>
+            {categorys.map((elm) => {
+                return (
+                    <div className='Users__name' key={elm.id}>
+                        <img className='Users__img' src={elm.image} alt=""/>
+                        <div className='Users__product'>
+                            <p>{elm.title}</p>
+                            <p>${elm.price}</p>
+                            <p>category:{elm.category}</p>
+                        </div>
+                    </div>
+                )
+            })
+}
+        </div>
+    )
 }

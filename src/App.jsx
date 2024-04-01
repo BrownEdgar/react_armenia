@@ -5,6 +5,7 @@ import { addUser } from './features/usersSlice'
 import Products from './components/Products/Products'
 import { addProduct, deleteProductById } from './features/productsSlice'
 import { nanoid } from 'nanoid'
+import { getAllArmenians } from './features/ProductsSlice/productsSlice'
 
 export default function App() {
   const count = useSelector((state) => state.counter)

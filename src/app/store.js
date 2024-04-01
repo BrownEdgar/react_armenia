@@ -1,9 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
 import counterSlice from '../features/counterSlice'
-import productsSlice from '../features/productsSlice'
+
 import todosReducer from '../features/todosSlice/todosSlice'
 import userSlice from '../features/usersSlice/userSlice'
 import { nanoid } from 'nanoid'
+import productsSlice from '../features/ProductsSlice/productsSlice'
 
 
 const myFirstMiddleware = (store) => (next) => (action) => {
@@ -29,9 +30,9 @@ const checkTodo = (store) => (next) => (action) => {
 export default configureStore({
   reducer: {
     counter: counterSlice,
-    products: productsSlice,
     todos: todosReducer,
-    users: userSlice
+    users: userSlice,
+    products: productsSlice
   },
   middleware: (getDefaultMiddleware) => [...getDefaultMiddleware(), checkTodo, myFirstMiddleware],
 })

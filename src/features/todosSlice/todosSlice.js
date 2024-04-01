@@ -37,8 +37,14 @@ const todosSlice = createSlice({
         state.loading = false;
         state.error = action.error
       })
+  },
+  selectors: {
+    getAllTodos: (state) => {
+      return state
+    }
   }
 })
 
 export default todosSlice.reducer;
 export const { addTodo, addTodos } = todosSlice.actions;
+export const { getAllTodos } = todosSlice.selectors;

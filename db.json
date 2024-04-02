@@ -1,0 +1,40 @@
+{
+  "posts": [
+    {
+      "id": "uzkwC",
+      "title": "frf",
+      "views": "22",
+      "number": "41"
+    },
+    {
+      "id": "1Rbx2",
+      "title": "fvv",
+      "views": "88"
+    },
+    {
+      "id": "Paeiy",
+      "title": "kkkkk",
+      "views": "22"
+    },
+    {
+      "id": "JvbR-",
+      "title": "fvfvf",
+      "views": 555
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": null
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": null
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

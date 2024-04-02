@@ -1,0 +1,39 @@
+{
+  "posts": [
+    { 
+      "id": "1", 
+      "title": "Meredes", 
+      "name":"C klass" ,
+      "solded": 100 ,
+      "price":58000
+    },
+    { 
+      "id": "2", 
+      "title": "Bwm", 
+      "name":"Series 5",
+      "solded": 200 ,
+      "price":63000
+    },
+    { 
+      "id": "3", 
+      "title": "Nissan", 
+      "name":"Skyline",
+      "solded": 99 ,
+      "price":129000
+    },
+    { 
+      "id": "4", 
+      "title": "Porshe", 
+      "name":"Cayene",
+      "solded": 119 ,
+      "price":75000
+    },
+    { 
+      "id": "5", 
+      "title": "Audi", 
+      "name":"Tron Gt",
+      "solded": 55 ,
+      "price":118000
+    }
+  ]
+}

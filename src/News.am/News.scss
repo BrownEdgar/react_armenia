@@ -1,0 +1,16 @@
+.Header{
+    display: flex;
+    background-color: aliceblue;
+    border-bottom: 1px solid grey;
+    text-align: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    &__about{
+        display: flex;
+        gap: 5px;
+    }
+    &__rout{
+        font-size: 1.6rem;
+        margin: 40px;
+    }
+}

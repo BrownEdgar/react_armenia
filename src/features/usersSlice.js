@@ -10,7 +10,7 @@ const initialValues = {
 export const getAsyncUsers = createAsyncThunk(
   "users/getAsyncUsers",
   async () => {
-    const res = await axios("http://localhost:3000/users");
+    const res = await axios.get("httpusers://localhost:3000/");
     return res.data;
   }
 );
@@ -31,6 +31,8 @@ const usersSlice = createSlice({
       .addCase(getAsyncUsers.fulfilled, (state, action) => {
         state.data = action.payload;
         state.status = "fulfilled";
+console.log(state);
+
       })
       .addCase(getAsyncUsers.rejected, (state, action) => {
         state.status = "failure";

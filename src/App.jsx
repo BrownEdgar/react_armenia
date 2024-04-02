@@ -14,13 +14,18 @@ console.log(categorys);
     }, [])
     
     const hendleSort =(category)=>{
-      const res = users.filter((clothes)=>clothes.category!==category)
+      const res = users.filter((clothes)=>clothes.category===category)
       setCategorys(res)
     }
+    const hendleAll =(category)=>{
+        setCategorys(users)
+      }
     return (
         <div className='Users'>
             <button onClick={()=>hendleSort("men's clothing")}> man's</button>
             <button onClick={()=>hendleSort("women's clothing")}> woman's</button>
+            <button onClick={()=>hendleAll("all")}> All</button>
+
             {categorys.map((elm) => {
                 return (
                     <div className='Users__name' key={elm.id}>

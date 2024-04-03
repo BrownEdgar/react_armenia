@@ -6,6 +6,7 @@ import Products from './components/Products/Products'
 import { addProduct, deleteProductById } from './features/productsSlice'
 import { nanoid } from 'nanoid'
 import { getAllArmenians } from './features/ProductsSlice/productsSlice'
+import Posts from './components/Posts/Posts'
 
 export default function App() {
   const count = useSelector((state) => state.counter)
@@ -37,9 +38,7 @@ export default function App() {
       <button onClick={() => {
         dispatch(addUser("Valod"))
       }}>add user </button> */}
-      <Products />
-      <button onClick={handleAddProduct}> Add Product</button>
-      <button onClick={handleDelete}> delete Product</button>
+      <Posts />
     </div>
   )
 }

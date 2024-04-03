@@ -5,26 +5,8 @@ import todosReducer from '../features/todosSlice/todosSlice'
 import userSlice from '../features/usersSlice/userSlice'
 import { nanoid } from 'nanoid'
 import productsSlice from '../features/ProductsSlice/productsSlice'
-
-
-const myFirstMiddleware = (store) => (next) => (action) => {
-  if (action.type === 'todos/addTodo') {
-    action.payload.id = nanoid(5)
-  }
-  next(action)
-}
-
-const checkTodo = (store) => (next) => (action) => {
-  if (action.type === 'todos/addTodo') {
-    const todos = store.getState().todos.data;
-    const isExist = todos.some(elem => elem.message === action.payload.message);
-    if (isExist) {
-      alert('todos exist');
-      return;
-    }
-  }
-  next(action)
-}
+import postsSlice from '../features/postsSlice'
+import mainMiddleware from '../middlewares/mainMiddleware'
 
 
 export default configureStore({
@@ -32,7 +14,8 @@ export default configureStore({
     counter: counterSlice,
     todos: todosReducer,
     users: userSlice,
-    products: productsSlice
+    products: productsSlice,
+    posts: postsSlice
   },
-  middleware: (getDefaultMiddleware) => [...getDefaultMiddleware(), checkTodo, myFirstMiddleware],
+  middleware: mainMiddleware
 })

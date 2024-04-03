@@ -22,6 +22,11 @@ export default function News() {
             .then(() => dispatch(getAsyncproducts()))
             .catch(err => console.log(err));
         formik.resetForm();
+    }
+    const handleDel = (id) => {
+        axios.delete(`http://localhost:3000/products/${id}`)
+            .then(() => dispatch(getAsyncproducts()))
+            .catch(err => console.log(err));
     };
 
     return (
@@ -62,6 +67,7 @@ export default function News() {
                         <p>${elm.price}</p>
                         <p>category: {elm.category}</p>
                     </div>
+                    <button className='Users__del' onClick={()=>handleDel(elm.id)}>X</button>
                 </div>
             ))}
         </div>

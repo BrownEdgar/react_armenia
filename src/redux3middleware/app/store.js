@@ -1,9 +1,11 @@
-import { configureStore, nanoid } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 import gendersSlice from "../features/gendersSlice";
+import postsSlice from '../features/postsSlice';
 
 export default configureStore({
   reducer: {
-  gender : gendersSlice
+    gender: gendersSlice,
+    posts: postsSlice
   }
 })
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './redux3middleware/App'
+import App from './redux3middleware/App2'
 import store from './redux3middleware/app/store'
 import { Provider } from 'react-redux'
 
@@ -10,4 +10,3 @@ ReactDOM.createRoot(document.getElementById('root'))
       <App />
     </Provider>
   )
-  

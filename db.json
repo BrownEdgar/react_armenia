@@ -8,20 +8,6 @@
       "price": 63000
     },
     {
-      "id": "3",
-      "title": "Nissan",
-      "name": "Skyline",
-      "solded": 99,
-      "price": 129000
-    },
-    {
-      "id": "4",
-      "title": "Porshe",
-      "name": "Cayene",
-      "solded": 119,
-      "price": 75000
-    },
-    {
       "id": "5",
       "title": "dsd",
       "name": "sdsds",
@@ -34,6 +20,13 @@
       "name": "sdada",
       "price": 324242,
       "solded": 234234
+    },
+    {
+      "id": "rQ9k0EzQP4VN9-Hb7Pggp",
+      "title": "dada",
+      "name": "dasda",
+      "price": 53453,
+      "solded": 343543
     }
   ]
 }

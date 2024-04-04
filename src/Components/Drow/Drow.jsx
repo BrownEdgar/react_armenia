@@ -6,14 +6,9 @@ import axios from 'axios'
 
 
 
-function Drow() {
+function Drow({data}) {
   const dispatch = useDispatch()
-  const { data, loading, error } = useSelector(state => state.products)
 
-
-  useEffect(() => {
-    dispatch(getAsyncProduct())
-  }, [dispatch])
 
   const handleDielete = (id) => {
     axios.delete(`http://localhost:3000/posts/${id}`)
@@ -22,9 +17,7 @@ function Drow() {
 
   return (
     <div className='Drow'>
-      {loading ? (
-        <h2 className='loading'>Loading ....</h2>
-      ) : (
+      {
         data.map(elm => {
           return (
             <div key={elm.id} className='Drow__products'>
@@ -41,7 +34,6 @@ function Drow() {
             </div>
           )
         })
-      )
       }
     </div>
   )

@@ -1,0 +1,42 @@
+
+.slick-slider {
+    border-radius: 16px;
+    background-color: #60606022;
+    height: 400px;
+    width: 50%;
+    margin: 150px auto;
+}
+
+.slick-dots > ul > li {
+    color: white;
+}
+
+.slick-dots li.slick-active button:before {
+    color: white;
+}
+
+.slick-track {
+    height: 100%;
+}
+
+.slick-next:before,
+.slick-prev:before {
+    font-size: 30px;
+}
+
+.slick-prev:before {
+    margin-left: -15px;
+}
+
+h2 {
+    color: white;
+    font-size: 30px;
+    text-align: center;
+}
+
+p,
+h4 {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}

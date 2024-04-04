@@ -1,0 +1,40 @@
+body {
+  background-color: rgb(255, 255, 255);
+}
+.App {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  .Slider {
+    margin: 0 auto;
+    width: 500px;
+    .slick-slider {
+      text-align: center;
+      .slick-prev:before,
+      .slick-next:before {
+        color: black;
+      }
+      .slick-list {
+        background-color: rgb(209, 209, 209);
+        height: 400px;
+        .slick-track {
+          > div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 400px;
+            .slider-control {
+              display: flex;
+              justify-content: space-between;
+              img {
+                width: 350px;
+                height: 200px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

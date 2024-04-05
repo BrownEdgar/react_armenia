@@ -15,17 +15,14 @@ export default function SimpleSlider() {
     autoplay: false,
     autoplaySpeed: 2000
   };
+
+  const x = 5;
+  if (x) {
+    throw new Error("Error")
+  }
   return (
-    <Slider {...settings}>
-      {
-        new Array(4).fill().map((_, index) => {
-          return (
-            <div key={index} className='slider__item'>
-              <img src="https://cdn.pixabay.com/photo/2023/12/17/20/31/car-8454879_1280.jpg" alt="car" />
-            </div>
-          )
-        })
-      }
-    </Slider>
+    <div>
+      <h1>Error example</h1>
+    </div>
   );
 }

@@ -1,8 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
-import requestAxios from '../features/request'
+import requestSlice from '../features/requestSlice'
+
 
 export default configureStore({
   reducer: {
-    request:requestAxios
+    request:requestSlice
   },
 })

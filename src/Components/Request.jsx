@@ -4,10 +4,10 @@ import { useEffect } from 'react'
 import { ErrorMessage, Field, Form, Formik } from 'formik'
 import { object, string } from 'yup';
 import { nanoid } from '@reduxjs/toolkit'
-import { addUser, dilateUser, getAsyncRequest } from '../features/request';
 import './Request.scss'
 
 import React from 'react'
+import { addUser, dilateUser,getAsyncRequest, handleSort } from '../features/requestSlice';
 
 
 export default function Request() {
@@ -24,8 +24,8 @@ export default function Request() {
       ...values,
       id: nanoid()
     }
+    console.log(user);
     dispatch(addUser(user))
-    console.log(values);
     formik.resetForm()
   }
 
@@ -40,13 +40,19 @@ export default function Request() {
     usersMessage: string().min(5, 'Min 5 Word').required()
   })
 
+  const handleSortClick =()=>{
+    dispatch(handleSort())
+  }
+
   return (
+    <>
     <div className='App__form'>
       <Formik
         initialValues={initialValues}
         onSubmit={handleSubmit}
         validationSchema={validationSchema}
         validateOnChange={false}
+        validateOnBlur={false}
       >
         <Form>
           <Field type='text' placeholder='Enter Your Name' name='usersMessage'></Field>
@@ -70,5 +76,7 @@ export default function Request() {
       }
 
     </div>
+    <button onClick={handleSortClick}>Sort</button>
+    </>
   )
 }

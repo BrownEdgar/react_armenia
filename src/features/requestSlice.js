@@ -2,14 +2,14 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const getAsyncRequest = createAsyncThunk(
-  "request/reuqestAxios",
+  "request/requestSlice",
   async () => {
     const response = await axios("https://jsonplaceholder.typicode.com/users");
     return response.data;
   }
 );
 
-const requestAxios = createSlice({
+const requestSlice = createSlice({
   name: "request",
   initialState: {
     data: [],
@@ -23,7 +23,10 @@ const requestAxios = createSlice({
 
     dilateUser(state,action){
      state.data = state.data.filter(user => user.id !== action.payload);
-     
+    },
+
+    handleSort(state){
+      state.data.sort((a, b) => a.name > b.name ? 1 : -1)
     }
   },
 
@@ -44,5 +47,5 @@ const requestAxios = createSlice({
   },
 });
 
-export default requestAxios.reducer;
-export const {addUser, dilateUser} = requestAxios.actions
+export default requestSlice.reducer;
+export const {addUser, dilateUser,handleSort} = requestSlice.actions

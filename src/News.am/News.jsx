@@ -23,7 +23,7 @@ export default function News() {
             </div>
            <Routes>
             <Route path='/' element={<Prod/>}></Route>
-            <Route path='/add' element={<AddProd/>}></Route>
+            <Route path='./add' element={<AddProd/>}></Route>
             <Route path='*'>aaa</Route>
            </Routes>
             

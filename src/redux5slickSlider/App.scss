@@ -1,0 +1,103 @@
+@import './sass/colors';
+
+.slider-container {
+  width: 90%;
+  margin: auto;
+  height: 200px;
+}
+
+body {
+}
+
+.slick {
+  &-slide {
+    text-align: center;
+  }
+
+  &-slider {
+    padding: 15px;
+    background-color: $background-color;
+    height: 500px;
+    margin: 150px auto;
+    border: 2px solid $border-color;
+    border-radius: 25px;
+    
+  }
+  
+  &-list {
+    color: $text-color;
+  }
+
+  &-track {}
+  
+  &-arrow {
+    background-color: #000;
+    &:hover{
+      background-color: #000;
+
+    }
+  }
+}
+
+.slider__item {
+  position: relative;
+  
+}
+
+.flex-part {
+  display: flex;
+  justify-content: space-between;
+
+  .bi-pencil {
+    margin-top: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+    &:hover{
+      scale: 1.1;
+    }
+  }
+  
+}
+button {
+  background-color: $button-color;
+  margin-top: 5px;
+  cursor: pointer;
+  height: 30px;
+  width: 45px;
+  border-radius: 40px;
+  color: $button-text-color;
+  &:hover{
+    scale: 1.05;
+  }
+}
+img{
+  margin: 15px auto;
+  object-fit: contain;
+}
+.slick-dots{
+  list-style-type: square;
+}
+.slick-dots{
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 50px;
+  margin: auto;
+  input{
+    background-color: $title-bcc;
+    padding: 5px;
+    border-radius: 12px;
+    width: 200px;
+    caret-color: $caret-color ;
+    &::placeholder{
+      color: $button-text-color ;
+    }
+  }
+  button{
+    height: fit-content;
+    // color: #d9d9d9;
+  }
+}

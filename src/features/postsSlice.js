@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+import { createAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axios from 'axios'
 
 
@@ -9,6 +9,17 @@ export const getAsyncPosts = createAsyncThunk(
     return response.data;
   }
 )
+
+export const x = createAction('myFlex/action', function prepare(text) {
+  return {
+    payload: {
+      text,
+      id: nanoid(),
+      createdAt: new Date().toISOString(),
+    },
+  }
+})
+
 
 const postSlice = createSlice({
   name: 'posts',
@@ -35,3 +46,5 @@ const postSlice = createSlice({
 export default postSlice.reducer;
 export const { addCount, minus } = postSlice.actions
 export const { getAllPosts } = postSlice.selectors
+
+

@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { x } from './postsSlice'
 const productSlice = createSlice({
   name: 'products',
   initialState: [{
@@ -13,7 +14,8 @@ const productSlice = createSlice({
     deleteProductById(state, action) {
       return state.filter(product => product.id !== action.payload.id)
     }
-  }
+  },
+
 })
 
 export default productSlice.reducer

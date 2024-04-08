@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { x } from './postsSlice';
 
 const counterSlice = createSlice({
   name: 'counter',
@@ -12,6 +13,12 @@ const counterSlice = createSlice({
       state = state - 1;
       return state
     }
+  },
+  extraReducers: (builder) => {
+    builder.addCase(x, (state, action) => {
+      console.log(22222)
+      return 7
+    })
   }
 })
 

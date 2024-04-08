@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { x } from '../postsSlice';
 
 const productSlice = createSlice({
   name: "products",
@@ -24,6 +25,15 @@ const productSlice = createSlice({
       console.log(state)
       return state.filter(elm => elm.country == "Armenia")
     }
+  },
+  extraReducers: (builder) => {
+    builder.addCase(x, (state, action) => {
+      state.push({
+        id: 2,
+        name: "Samsung TV 2",
+        price: 300_000
+      })
+    })
   }
 
 })

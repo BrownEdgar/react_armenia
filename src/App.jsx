@@ -1,44 +1,45 @@
-import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { addCount, minus } from './features/counterSlice'
-import { addUser } from './features/usersSlice'
-import Products from './components/Products/Products'
-import { addProduct, deleteProductById } from './features/productsSlice'
-import { nanoid } from 'nanoid'
-import { getAllArmenians } from './features/ProductsSlice/productsSlice'
-import Posts from './components/Posts/Posts'
+import React, { useState } from 'react'
+import './App.scss'
+import Translate from './i18n/Translate'
+import I18nProvider from './i18n/Provider'
+import { LOCALES } from './i18n/locale'
+
+const message = 'React lets you build user interfaces out of individual pieces called components. Create your own React components like Thumbnail, LikeButton, and Video. Then combine them into entire screens, pages, and apps.'
+
+const flags = {
+  ENGLISH: "🇺🇸",
+  RUSSIAN: "🇷🇺",
+  ARMENIAN: "🇦🇲"
+}
 
 export default function App() {
-  const count = useSelector((state) => state.counter)
+  const [language, setLanguage] = useState(LOCALES.ENGLISH);
 
-  const users = useSelector((state) => state.users)
-  const dispatch = useDispatch();
-
-  const handleClick = () => {
-    dispatch(minus())
-  }
-  const handleAddProduct = () => {
-    const newProduct = {
-      id: nanoid(5),
-      name: "iPhone 15 Pro",
-      price: 1_120_000
-    }
-    dispatch(addProduct(newProduct))
-  }
-
-  const handleDelete = () => {
-    dispatch(deleteProductById({ id: 'rkvcV' }))
+  const handlecHANGE = (e) => {
+    setLanguage(e.target.value)
   }
 
   return (
-    <div>
-      {/* <h1>Count: {count}</h1>
-      <h1>users: {JSON.stringify(users)}</h1>
-      <button onClick={handleClick}>add count</button>
-      <button onClick={() => {
-        dispatch(addUser("Valod"))
-      }}>add user </button> */}
-      <Posts />
-    </div>
+    <I18nProvider locale={language}>
+      <div>
+        <select name="language" id="language" onChange={handlecHANGE}>
+          {
+            Object.keys(LOCALES).map(language => {
+              return (
+                <option value={LOCALES[language]} key={language}>
+                  {flags[language]}
+                </option>
+              )
+            })
+          }
+        </select>
+        <h1>
+          <Translate id='title' />
+        </h1>
+        <p>
+          <Translate id='desc' value={{ extraDesc: message }} />
+        </p>
+      </div>
+    </I18nProvider>
   )
 }

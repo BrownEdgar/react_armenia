@@ -1,7 +1,0 @@
-@mixin mainFlex($jc, $ai, $gap) {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: $jc;
-  align-items: $ai;
-  gap: $gap;
-}

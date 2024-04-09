@@ -9,8 +9,17 @@
         display: flex;
         gap: 5px;
     }
-    &__rout{
+    &__route{
         font-size: 1.6rem;
         margin: 40px;
+    }
+    &__route:hover{
+        color: red;
+    }
+    &__select{
+        color: white;
+        background: #e90606;
+        height: 40px;
+        border-radius: 25px;
     }
 }

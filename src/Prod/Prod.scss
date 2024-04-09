@@ -1,0 +1,26 @@
+.News {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    justify-content: center;
+    margin: 40px;
+    &__prod {
+        width: 30%;
+        margin: 10px;
+    }
+    &__img {
+        width: 300px;
+        height: 220px;
+        object-fit: cover;
+    }
+    &__titles {
+        width: 300px;
+    }
+    &__title {
+        font-size: 18px;
+    }
+}
+.Arm {
+    text-align: center;
+    width: 70%;
+    margin: 40px auto;
+}

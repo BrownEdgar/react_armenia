@@ -11,10 +11,10 @@ export default function AddProd() {
     const handleAdd = (values, formik) => {
         const data = {
             id: nanoid(),
-            title:values.title,
-            price:values.price,
-            category:values.category,
-            poster:`./images/${values.file}`,
+            title: values.title,
+            price: values.price,
+            category: values.category,
+            poster: `./images/${values.file}`
         };
         axios
             .post("http://localhost:3000/products", data)
@@ -35,16 +35,32 @@ export default function AddProd() {
                 {(formik) => {
                     return (
                         <Form className='Form'>
-                            <Field type="text" name="title" placeholder="add product name" required/>
-                            <Field type="number" name="price" placeholder="add product price" required/>
-                            <Field type="text" name="category" placeholder="add product category" required/>
+                            <Field
+                                className="Form__text"
+                                type="text"
+                                name="title"
+                                placeholder="add product name"
+                                required/>
+                            <Field
+                                className="Form__number"
+                                type="number"
+                                name="price"
+                                placeholder="add product price"
+                                required/>
+                            <Field
+                                className="Form__category"
+                                type="text"
+                                name="category"
+                                placeholder="add product category"
+                                required/>
                             <Field
                                 type="file"
+                                className="Form__poster"
                                 name="poster"
                                 onChange={(e) => {
                                 formik.setFieldValue("file", e.currentTarget.files[0].name)
                             }}/>
-                            <input type='submit' value={"add post"}/>
+                            <input className="Form__input" type='submit' value={"add post"}/>
                         </Form>
                     )
 

@@ -1,0 +1,13 @@
+.NotFound{
+    margin: 0 auto;
+    &__title{
+        margin: 170px auto 20px;
+        text-align: center;
+        color: rgb(255, 32, 32);
+        font-size: 40px;
+    }
+    &__text{
+        text-align: center;
+        font-size: 25px;
+    }
+}

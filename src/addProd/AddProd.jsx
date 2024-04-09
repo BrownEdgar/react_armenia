@@ -39,19 +39,13 @@ export default function AddProd() {
                                 className="Form__text"
                                 type="text"
                                 name="title"
-                                placeholder="add product name"
-                                required/>
-                            <Field
-                                className="Form__number"
-                                type="number"
-                                name="price"
-                                placeholder="add product price"
+                                placeholder="add news title"
                                 required/>
                             <Field
                                 className="Form__category"
                                 type="text"
                                 name="category"
-                                placeholder="add product category"
+                                placeholder="add news text"
                                 required/>
                             <Field
                                 type="file"
@@ -60,7 +54,7 @@ export default function AddProd() {
                                 onChange={(e) => {
                                 formik.setFieldValue("file", e.currentTarget.files[0].name)
                             }}/>
-                            <input className="Form__input" type='submit' value={"add post"}/>
+                            <input className="Form__input" type='submit' value={"add news"}/>
                         </Form>
                     )
 

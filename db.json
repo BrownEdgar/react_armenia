@@ -122,8 +122,6 @@
     }
   ],
   "products": [
-    
-    
     {
       "id": "JP_2LtE4on7mlE42cCawz",
       "title": "Սաթի Սպիվակովան՝ Մարիա Կալասի դերի, Սերգեյ Փարաջանովի նվերի և արհեստական ինտելեկտի մասին ",
@@ -165,6 +163,13 @@
       "price": 1111,
       "category": " Առաջին Starship-ը, որը վայրէջք կկատարի Մարսում…",
       "poster": "https://news.am/img/news/81/67/54/220x220.jpg"
+    },
+    {
+      "id": "kq9DMOaXpLvaW9MdNMULi",
+      "title": "հայերը բասկնաա",
+      "price": 4166,
+      "category": "սաասֆսֆ",
+      "poster": "./images/photo-2.jpg"
     }
   ]
 }

@@ -1,0 +1,40 @@
+.App {
+  margin: 50px auto;
+  padding: 50px;
+
+  &__content {
+    display: flex;
+    align-items: center;
+
+    &__about {
+     flex-grow: 1;
+    }
+  }
+
+
+  select {
+    padding: 9px 10px;
+    border-radius: 10px;
+    background-color: teal;
+  }
+
+  h1 {
+    color: white;
+  }
+
+  p {
+    color: white;
+    font-size: 25px;
+    width: 70%;
+  }
+
+  button {
+    cursor: pointer;
+    padding: 10px 10px;
+    font-size: 16px;
+    border-radius: 16px;
+    border: none;
+    background-color: rgb(1, 77, 77);
+    color: white;
+  }
+}

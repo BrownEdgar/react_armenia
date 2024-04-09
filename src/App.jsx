@@ -1,32 +1,43 @@
-import { useEffect } from 'react'
-import './App.css'
-import AddedProd from './Components/AddProd/AddedProd'
-import Drow from './Components/Drow/Drow'
-import { getAsyncProduct } from './features/productSlice'
-import { useDispatch, useSelector } from 'react-redux'
+import React, { useState } from 'react'
+import Provider from './i18n/Provider'
+import Translate from './i18n/Translate'
+import { LOCALES } from './i18n/messages/locale'
+import './App.scss'
+import ReactHeader from './Components/ReactHeader/ReactHeader'
+import ReactMain from './Components/ReactMain/ReactMain'
+import ReactFooter from './Components/ReactFooter/ReactFooter'
 
+export default function App() {
+  const [language, setLanguage] = useState(LOCALES.ENGLISH)
 
-function App() {
-  const { data, loading, error } = useSelector(state => state.products)
-  const dispatch = useDispatch()
-  
-  useEffect(() => {
-    dispatch(getAsyncProduct())
-  }, [])
+  const languages = {
+    ENGLISH: 'English',
+    RUSSIAN: 'Русский',
+    ARMENIAN: 'Հայերեն'
+  }
+
+  const changeLanguage = (e) => {
+    setLanguage(e.target.value)
+  }
+
   return (
-    <div className='App'>
-       {loading ? (
-        <h2 className='loading'>Loading ....</h2>
-      ) : (
-        <>
-         <AddedProd/>
-         <Drow data={data}/>
-        </>
-      )
-      }
-    </div>
-
+    <Provider locale={language}>
+      <div className='App'>
+       <div className="conteiner">
+        <select name="language" id="language" onChange={changeLanguage} >
+           {
+             Object.keys(LOCALES).map(elm => {
+               return (
+                  <option value={LOCALES[elm]} key={elm}>{languages[elm]}</option>
+               )
+              })
+            }
+         </select>
+        <ReactHeader/>
+        <ReactMain/>
+       </div>
+       <ReactFooter/>
+      </div>
+    </Provider>
   )
 }
-
-export default App

@@ -1,16 +1,17 @@
 import React, { Fragment } from 'react'
-import { IntlProvider } from 'react-intl'
+import {IntlProvider} from 'react-intl'
 import messages from './messages'
 
-
-export default function Provider({ children, locale }) {
+function Provider({children, local}) {
   return (
     <IntlProvider
-      locale={locale}
-      textComponent={Fragment}
-      messages={messages[locale]}
+    locale={local}
+    textComponent={Fragment}
+    messages={messages[locale]}
     >
       {children}
     </IntlProvider>
   )
 }
+
+export default Provider
